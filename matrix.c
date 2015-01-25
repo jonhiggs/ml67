@@ -166,7 +166,7 @@ static matrix_row_t read_cols(void)
            (PINF&(1<<6) ? 0 : (1<<4) ) |
            (PINF&(1<<7) ? 0 : (1<<5) ) |
            (PINB&(1<<6) ? 0 : (1<<6) ) |
-           (PINB&(1<<5) ? 0 : (1<<7) ) |
+           (PINB&(1<<5) ? 0 : (1<<7) ) ;
 }
 
 /* IMPORTANT: TMK rows are Filco columns due to the direction of the diodes in
