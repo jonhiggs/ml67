@@ -43,7 +43,7 @@ TARGET = ml62_lufa
 
 # Directory common source files exist
 TOP_DIR = ../..
-LUFA_PATH = protocol/lufa/LUFA-130901
+LUFA_PATH = protocol/lufa/LUFA-git
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
