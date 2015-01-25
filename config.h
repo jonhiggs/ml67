@@ -27,9 +27,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT         ML67
 #define DESCRIPTION     T.M.K. Hacked Filco Minila.
 
-/* key matrix size */
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 12
+/* key matrix size
+   TMK rows and columns are different to the Filco rows and columns due to the
+   direction of the diodes in the circuit board.
+*/
+#define MATRIX_ROWS 12
+#define MATRIX_COLS 8
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
