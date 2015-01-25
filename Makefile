@@ -57,7 +57,6 @@ SRC = keymap_$(KEYMAP).c \
 
 CONFIG_H = config.h
 
-
 MCU = atmega32u4
 BOARD = TEENSY2
 F_CPU = 16000000
