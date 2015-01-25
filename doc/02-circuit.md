@@ -4,18 +4,18 @@ I'm going to cheat for now and just give you the answer. Perhaps you can reverse
 
 If you are not interested in how it works, you can safely move on to the next section. [Patching in](./patching)
 
-*TODO:* Explain how to find the links.
-
 ![The original 28pin header](../images/header.png)
 
-
-The first thing we should do is decide upon what to name each of the keys. It doesn't really matter what they are called at this point, but to make things easier, I'm going to use the same naming scheme we will use later within the T.M.K. firmware.
+The first thing we should do is decide upon is what to name each of the keys. It doesn't really matter what they are called at this point, but to make things easier, I'm going to use the same naming scheme we will use later within the TMK firmware.
 
 ![Keys](../images/keys.png)
 
-Each key has three values. Top is the TMK identifier which we will use in the firmware later one. Middle is the column. Third is the row.
+Each key has three values. Top is the TMK identifier which we will use in the firmware [later on](./04-tmk). The Middle value is the column. The last is the row.
 
+TODO: fix link.  
 If you don't understand how a keyboard matrix works, I recommend you take a look at [this]().
+
+The factory matrix looks like this:
 
 |    | C0  | C1  | C2  | C3  | C4  | C5  | C6  | C7  | C8  | C9  | C10 | C11 | C12 | C13 | C14 | C15 |
 |----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -31,7 +31,18 @@ If you don't understand how a keyboard matrix works, I recommend you take a look
 
 ## Merging Columns
 
-Each row and each column will require a pin on your Teensy. It is possible to merge some columns together so that we can reduce the number of pins that we require.
+Each row and each column will require a pin on your Teensy. It is possible to merge some columns together to reduce the total number of pins required.
+
+Straight away it's pretty obvious that a couple of the columns can be merged together to save us some pins.
+
+I'm going to perform the following merges:
+
+- C12 -> C1
+- C14 -> C2
+- C0  -> C3
+- C13 -> C7
+
+Afterwards, the merged matrix will look like this:
 
 |    | C1  | C2  | C3  | C4  | C5  | C6  | C7  | C8  | C9  | C10 | C11 | C15 |
 |----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -43,23 +54,6 @@ Each row and each column will require a pin on your Teensy. It is possible to me
 | R5 | K4A | K48 |     | K35 | K36 |     | K47 | K3A | K46 |     | K49 |     |
 | R6 | K0D |     | K40 | K05 | K06 | K0C |     | K0B |     | K3D |     |     |
 | R7 | K01 | K02 | K03 | K04 | K07 | K08 | K09 | K0A |     |     |     |     |
-
-C12 Merged onto C1
-C14 Merged onto C2
-C0  Merged into C3
-C13 Merged onto C7
-
-
-## Testing for Mistakes.
-
-We really don't want to solder in mistakes. It'll be much easier to fix if we spot the errors earlier.
-
-Use the original header to jump the columns we want to merge.
-
-![Merge Columns](../images/merge_columns.png)
-
-Grab your multimeter and make sure that all the merged columns are shorted correctly.
-
 
 
 
