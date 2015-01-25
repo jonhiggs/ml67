@@ -134,33 +134,49 @@ uint8_t matrix_key_count(void)
     return count;
 }
 
-/* Column pin configuration
- * col: 0   1   2   3   4   5   6   7   8   9
- * pin: F0  F1  F4  F5  F6  F7  B6  B5  D5  D6
- */
+/*
+  | Filco  | Teensy |
+  |--------|--------|
+  | C1/C12 | B0     |
+  | C2/C14 | B1     |
+  | C3/C0  | B2     |
+  | C4     | B3     |
+  | C5     | E6     |
+  | C6     | B7     |
+  | C7/C13 | D0     |
+  | C8     | D1     |
+  | C9     | D2     |
+  | C10    | D3     |
+  | C11    | C6     |
+  | C15    | C7     |
+*/
 
 static void  init_cols(void)
 {
-    DDRF  &= ~0b11110011;
-    PORTF |=  0b11110011;
-    DDRB  &= ~0b01100000;
-    PORTB |=  0b01100000;
-    DDRD  &= ~0b00100000;
-    PORTD |=  0b01100000;
+    DDRB  &= ~0b10001111;
+    PORTB |=  0b10001111;
+    DDRE  &= ~0b01000000;
+    PORTE |=  0b01000000;
+    DDRD  &= ~0b00001111;
+    PORTD |=  0b00001111;
+    DDRC  &= ~0b11000000;
+    PORTC |=  0b11000000;
 }
 
 static matrix_row_t read_cols(void)
 {
-    return (PINF&(1<<0) ? 0 : (1<<0)) |
-           (PINF&(1<<1) ? 0 : (1<<1)) |
-           (PINF&(1<<4) ? 0 : (1<<2)) |
-           (PINF&(1<<5) ? 0 : (1<<3)) |
-           (PINF&(1<<6) ? 0 : (1<<4)) |
-           (PINF&(1<<7) ? 0 : (1<<5)) |
-           (PINB&(1<<6) ? 0 : (1<<6)) |
-           (PINB&(1<<5) ? 0 : (1<<7)) |
-           (PIND&(1<<5) ? 0 : (1<<8)) |
-           (PIND&(1<<6) ? 0 : (1<<9)) ;
+    return (PINB&(1<<0) ? 0 : (1<<0) ) |
+           (PINB&(1<<1) ? 0 : (1<<1) ) |
+           (PINB&(1<<2) ? 0 : (1<<2) ) |
+           (PINB&(1<<3) ? 0 : (1<<3) ) |
+           (PINE&(1<<6) ? 0 : (1<<4) ) |
+           (PINB&(1<<7) ? 0 : (1<<5) ) |
+           (PIND&(1<<0) ? 0 : (1<<6) ) |
+           (PIND&(1<<1) ? 0 : (1<<7) ) |
+           (PIND&(1<<2) ? 0 : (1<<8) ) |
+           (PIND&(1<<3) ? 0 : (1<<9) ) |
+           (PINC&(1<<6) ? 0 : (1<<10)) |
+           (PINC&(1<<7) ? 0 : (1<<11)) ;
 }
 
 /* Row pin configuration
