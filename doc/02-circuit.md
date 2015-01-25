@@ -19,13 +19,13 @@ If you don't understand how a keyboard matrix works, I recommend you take a look
 
 |    | C0  | C1  | C2  | C3  | C4  | C5  | C6  | C7  | C8  | C9  | C10 | C11 | C12 | C13 | C14 | C15 |
 |----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| R0 |     | K11 | K12 | K13 | K14 | K17 | K18 | K19 | K1A | K45 |     |     |     | K41 |     |     |
-| R1 |     | K10 | K20 |     | K15 | K16 | K1C |     | K1B |     | K0E |     |     |     |     | K30 |
+| R0 |     | K11 | K12 | K13 | K14 | K17 | K18 | K19 | K1A | K45 |     |     |     |     |     |     |
+| R1 |     | K10 | K20 |     | K15 | K16 | K1C |     | K1B |     | K0E |     |     | K41 |     | K30 |
 | R2 |     | K21 | K22 | K23 | K24 | K27 | K28 | K29 | K2A | K43 | K1D | K44 |     |     |     | K3B |
 | R3 |     | K00 |     |     | K25 | K26 |     |     | K2B | K42 |     |     |     |     | K3C |     |
-| R4 |     | K31 | K32 | K33 | K34 | K37 | K38 | K39 | K3A |     | K2C |     |     |     |     |     |
-| R5 |     |     |     |     | K35 | K36 |     |     |     | K46 |     | K49 | K4A | K47 | K48 |     |
-| R6 | K40 | K0D |     |     | K05 | K06 | K0B |     |     |     | K3D |     |     |     |     |     |
+| R4 |     | K31 | K32 | K33 | K34 | K37 | K38 | K39 |     |     | K2C |     |     |     |     |     |
+| R5 |     |     |     |     | K35 | K36 |     |     | K3A | K46 |     | K49 | K4A | K47 | K48 |     |
+| R6 | K40 | K0D |     |     | K05 | K06 | K0C |     | K0B |     | K3D |     |     |     |     |     |
 | R7 |     | K01 | K02 | K03 | K04 | K07 | K08 | K09 | K0A |     |     |     |     |     |     |     |
 
 
@@ -33,22 +33,21 @@ If you don't understand how a keyboard matrix works, I recommend you take a look
 
 Each row and each column will require a pin on your Teensy. It is possible to merge some columns together so that we can reduce the number of pins that we require.
 
-
 |    | C1  | C2  | C3  | C4  | C5  | C6  | C7  | C8  | C9  | C10 | C11 | C15 |
 |----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| R0 | K11 | K12 | K13 | K14 | K17 | K18 | K19 | K1A | K45 | K41 |     |     |
-| R1 | K10 | K20 |     | K15 | K16 | K1C |     | K1B |     | K0E |     | K30 |
+| R0 | K11 | K12 | K13 | K14 | K17 | K18 | K19 | K1A | K45 |     |     |     |
+| R1 | K10 | K20 |     | K15 | K16 | K1C | K41 | K1B |     | K0E |     | K30 |
 | R2 | K21 | K22 | K23 | K24 | K27 | K28 | K29 | K2A | K43 | K1D | K44 | K3B |
 | R3 | K00 | K3C |     | K25 | K26 |     |     | K2B | K42 |     |     |     |
-| R4 | K31 | K32 | K33 | K34 | K37 | K38 | K39 | K3A |     | K2C |     |     |
-| R5 | K4A | K48 |     | K35 | K36 |     |     |     | K46 | K47 | K49 |     |
-| R6 | K0D |     | K40 | K05 | K06 | K0B |     |     |     | K3D |     |     |
+| R4 | K31 | K32 | K33 | K34 | K37 | K38 | K39 |     |     | K2C |     |     |
+| R5 | K4A | K48 |     | K35 | K36 |     | K47 | K3A | K46 |     | K49 |     |
+| R6 | K0D |     | K40 | K05 | K06 | K0C |     | K0B |     | K3D |     |     |
 | R7 | K01 | K02 | K03 | K04 | K07 | K08 | K09 | K0A |     |     |     |     |
 
 C12 Merged onto C1
 C14 Merged onto C2
 C0  Merged into C3
-C13 Merged onto C10
+C13 Merged onto C7
 
 
 ## Testing for Mistakes.
