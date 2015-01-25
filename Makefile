@@ -38,8 +38,9 @@
 # To rebuild project do "make clean" then "make all".
 #----------------------------------------------------------------------------
 
+KEYMAP = plain
 # Target file name (without extension).
-TARGET = ml62_lufa
+TARGET = ml67_${KEYMAP}
 
 # Directory common source files exist
 TOP_DIR = ../..
@@ -49,15 +50,10 @@ LUFA_PATH = protocol/lufa/LUFA-git
 TARGET_DIR = .
 
 # project specific files
-SRC = keymap_common.c \
-    matrix.c \
-    led.c
-
-ifdef KEYMAP
-    SRC := keymap_$(KEYMAP).c $(SRC)
-else
-    SRC := keymap_plain.c $(SRC)
-endif
+SRC = keymap_$(KEYMAP).c \
+      keymap_common.c \
+      matrix.c \
+      led.c \
 
 CONFIG_H = config.h
 
