@@ -23,6 +23,16 @@ add the ml67 repo as a submodule in the keyboards.
 make clean
 make <keyboard_type>
 
+Among, some others, a file named `ml67_<keyboard_type>.hex` will be generated.
+
+Load `ml67_<keyboard_type>.hex` up in the [Teensy Loader]().
+
+Press the green 'Auto' button in the Teensy Loader.
+
+Press the button on the actual Teensy.
+
+It should say that it's erasing and programming the new firmware onto the Teensy.
+
 
 ## Modifying the Code
 
