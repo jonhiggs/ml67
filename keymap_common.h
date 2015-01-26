@@ -49,7 +49,7 @@ extern const uint16_t fn_actions[];
     { KC_##K1A , KC_##K1B , KC_##K2A , KC_##K2B , KC_NO    , KC_##K3A , KC_##K0B , KC_##K0A },\
     { KC_##K45 , KC_NO    , KC_##K43 , KC_##K42 , KC_NO    , KC_##K46 , KC_NO    , KC_NO    },\
     { KC_NO    , KC_##K0E , KC_##K1D , KC_NO    , KC_##K2C , KC_NO    , KC_##K3D , KC_NO    },\
-    { KC_NO    , KC_NO    , KC_##K44 , KC_NO    , KC_NO    , KC_##K49 , KC_NO    , KC_NO    },\
+    { KC_NO    , KC_NO    , KC_NO    , KC_##K44 , KC_NO    , KC_##K49 , KC_NO    , KC_NO    },\
     { KC_NO    , KC_##K30 , KC_##K3B , KC_NO    , KC_NO    , KC_NO    , KC_NO    , KC_NO    },\
 }
 
