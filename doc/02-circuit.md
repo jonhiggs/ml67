@@ -1,20 +1,6 @@
 # Deciphering the Circuit
 
-If you are not interested in how it works, you can safely move on to the next section [Patching in](./patching).
-
-## Disassembly
-
-The first job is to pull apart your keyboard. Remove the screws from the bottom. There will be a couple of tabs at the back. Pop the outside shell out with a small screwdriver, then pop out the front.
-
-Remove the plastic shroud, then lift the keyboard out. It will be connected to a small controller via a 28pin connector. Be gentle and it should lift out.
-
-At this point you should have a circuit board that looks like this.
-
-![Underside of Board](../images/board-underside.png)
-
-Now we are ready to move on to deciphering the circuit.
-
-
+If you are not interested in *how* it works, you can safely move on to the next section [Patching in](./patching).
 
 I'm going to cheat for now and just give you the answer. Perhaps you can reverse-engineer how I came to the answer if you are interested.
 

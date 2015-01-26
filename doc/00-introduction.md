@@ -6,9 +6,9 @@ I've done this once before with the ML62 project. The difference between this an
 
 I discovered that my drastic customisations backfired and made it impossible for me to add keys back in. In this project I'm not going to remove any keys from the keymap. It will mean that more pins will be used but that's a better compromise.
 
-With the ML62, I retrospectively tried to document the project a long time after most of the work was done. Hence, the documentation was never as good as I wanted it to be.
+With the ML62, I retrospectively tried to document the project long after most of the work was done. Hence, the documentation was never as good as I wanted it to be.
 
-I'm documenting the process of this build as I go and should be accurate. If you find any mistakes, please let me know.
+This time I'm documenting the process as I go and should be much more accurate. If you find any mistakes, please let me know.
 
 ## Tools and Stuff
 

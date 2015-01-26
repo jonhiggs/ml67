@@ -1,4 +1,19 @@
-# Using the Original Controller
+# USB Connector
+
+There are a few ways you can go about connecting your computer to your Teensy.
+
+
+## A Patch Lead
+
+This is a short lead that runs from your Teensy to a female chassis mount plug.
+
+
+## Hard Wire
+
+Plug directly into the Teensy. Drill a hole in you case. Tie a knot in your lead so it doesn't yank anything off and run it straight out.
+
+
+## Original Controller
 
 I believe that it's possible to use the original controller as a USB hub for your Teensy.
 

@@ -2,6 +2,7 @@
 
 Before you commit to anything, it's paramount that you can at least program your Teensy and it works. Preferably you'll also be able to compile the source as well.
 
+
 ## Getting the Code
 
 TODO
@@ -23,8 +24,7 @@ Install the [Teensy Loader](https://www.pjrc.com/teensy/loader.html) for your op
 3. Press the button on the actual Teensy. It should say that it's erasing and programming the new firmware then say that it's rebooting.
 4. At this point, shorting `B0` with `F0` should appear as though you are pressing the letter 'Q'.
 
-If that works then well done.
-Don't proceed until you get this much working.
+If that works then well done. Otherwise keep trying and don't proceed until you get this much working.
 
 
 ## Building the Code
@@ -38,5 +38,4 @@ make <keyboard_type>
 Among, some others, a file named `ml67_<keyboard_type>.hex` will be generated.
 
 Load `ml67_<keyboard_type>.hex` up in the [Teensy Loader]().
-
 
