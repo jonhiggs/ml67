@@ -4,7 +4,10 @@ The original Filco LED circuit looks like this:
 
 ![Filco Led Circuit](../images/filco_led_circuit.png)
 
-Because the original circuit has the switch on the ground, we need make some changes. We need to break the trace so that we can power each LED individually and without the original controller in place, we now need to ground the leg that did go off to the switch (`D1` and `D2` on the original header).
+Because the original circuit has the switch on the ground, we need make some changes. 
+
+1. Break the trace so that we can power each LED individually.
+2. Ground the cathode legs that did go off to the switch (`D1` and `D2` on the original header).
 
 The new circuit looks like this:
 
