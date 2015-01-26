@@ -121,8 +121,8 @@ You can see the usage of all the Teensy pins in this table.
 | R5    | F7     |
 | R6    | B6     |
 | R7    | B5     |
-| D2    | D5     |
-| D1    | D4     |
+| D1    | D5     |
+| SPARE | D4     |
 | SPARE | B4     |
 | SPARE | D7     |
 | SPARE | D6     |
