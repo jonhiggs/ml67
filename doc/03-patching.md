@@ -1,6 +1,6 @@
 # Patching In
 
-At this point, it's time to start patching into the Minila board so break out the tools.
+It's time to start patching into the Minila board so break out the tools.
 
 A few tips to keep in mind before you get started.
 
@@ -15,31 +15,37 @@ A few tips to keep in mind before you get started.
 
 The first job is to pull apart your keyboard. Remove the screws from the bottom. There will be a couple of tabs at the back. Pop the outside shell out with a small screwdriver, then pop out the front.
 
-Remove the plastic shroud, then lift the keyboard out. It will be connected to a small controller via a 28pin connector. Be gentle and it should lift out.
+Remove the plastic shroud and take the little caps off the LEDs. They will fall off and get lost very easily.
+
+Lift the keyboard out. It will be connected to a small controller via a 28pin connector.
 
 At this point you should have a circuit board that looks like this.
 
 ![Underside of Board](../images/board-underside.png)
 
-Now we are ready to move on to deciphering the circuit.
-
 
 ## Positioning the Teensy
 
-We need to decide where we are going to put the Teensy. There are a couple of design considerations. The position of the USB connector; will it physically fit where you plan to put it, and can you get the USB cable into the plug once it's in place.
+We need to decide where we are going to put the Teensy. There are a couple of design considerations. 
 
-If you are planing on using the original case, have a read about the [original controller](./06-usb_connector). I think it's possible to reuse it but there are some things you should be aware of.
+- Can you fit a USB cable into the plug?
+- Have you obscured any of the holes that the base uses to line up the board?
+- Will it physically fit into the base with the added hight of the Teensy?
+- Have you obscured the only point available for one of the pins? (unlikely regardless of where you use.)
+- Are most of the points nearby so you're not running silly amounts of wire around?
 
-In my design, I'm opting for the new keyboard to be a drop-in replacement for my [ML62](https://github.com/jonhiggs/ml62). I'm going to place my Teensy on the Filco board with some double-sided tape. I've also grounded the Filco using the solder pad on the underside of the Teensy. In the position I chose, it's still possible to use the original case if I choose.
+The point I used was quite close to a hole in the board but it worked pretty good I thought.
+
+I placed my Teensy on the Filco board with some double-sided tape. I've also grounded the Filco using the solder pad on the underside of the Teensy.
 
 ![Grounded Filco](../images/grounded.png)
 
 
 ## Merging Columns
 
-On the underside of the Filco board, we need to short some of the columns together to reduce the number of pins that are required on the Teensy. For a better description as to why, see [chapter 2](./02-circuit). It doesn't matter which points you use, it's up to you.
+On the underside of the Filco board, we need to short the columns we decided to merge in the [last chapter](). It doesn't matter which points you use, it's up to you.
 
-The columns that we are joining are:  
+The columns that we will be joining are:  
 `C12` -> `C1`  
 `C14` -> `C2`  
 `C0`  -> `C3`  
@@ -52,7 +58,7 @@ There is nothing special. Just join them up like that.
 
 ## Rows
 
-The rows are a bit trickier than the columns so we'll do those first. We need to find a point where we can solder which is electrically equivalent to that of the original header. Specifically, there needs to be a diode between the switch and the Teensy. If you patch directly into the point marked `R` on the board, you will bypass the diode and cause yourself problems during simultaneous keystrokes.
+We'll do the rows before the columns because they are a bit trickier. We need to find a point to solder which is electrically equivalent to that of the original header. Specifically, there needs to be a diode between the switch and the Teensy. If you patch directly into the point marked `R` on the board, you will bypass the diode and cause yourself problems during simultaneous keystrokes.
 
 The procedure I used to find the points to solder is:
 
@@ -89,9 +95,9 @@ Once finished, my circuit looked like this.
 
 ## Columns
 
-The process for the columns is easier than that of the rows. Find any point on the board with the correct label, then solder it to the correct pin of the Teensy.
+Find any point on the board with the correct label, then solder it to the correct pin of the Teensy. Easy.
 
-For columns that have been merged, you can use either of the columns.
+If the column has been merged, you can use either of the columns.
 
 | Filco  | Teensy |
 |--------|--------|

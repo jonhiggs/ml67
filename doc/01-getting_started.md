@@ -1,6 +1,6 @@
 # Getting Started
 
-Before you commit to anything, it's paramount that you can at least program your Teensy and it works. Preferably you'll also be able to compile the source as well.
+Before you commit to anything, it's paramount that you can at least program your Teensy and it works. Preferably you'll also be able to compile from the source to build your own HEX files.
 
 
 ## Getting the Code
