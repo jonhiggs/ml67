@@ -1,5 +1,9 @@
 # ML67
 
+![Hacking The Filco Minila](./images/columns.png)
+
+![To This](./images/reassembled.png)
+
 ---
 
 **NOTE**: The current state of this project is unfinished but most of the documentation is included. I'm still filling in some holes, fixing some links and editing. Be aware that you may require to complete a little investigation yourself.
