@@ -13,9 +13,9 @@
 
 This project is an attempt to fully document the hardware of the [Filco Minila](https://www.diatec.co.jp/en/det.php?prod_c=1320) and describe how to hack the [tmk_keyboard](https://github.com/tmk/tmk_keyboard) firmware in. When you are finished, you should have a *fully programmable* keyboard that looks identical to the original Minila.
 
-The [ML62](https://github.com/jonhiggs/ml62) was my first attempt. A very successful attempt in my opinion, but I came to discover to resolve some initial design decisions, I'd need to start over.
+The [ML62](https://github.com/jonhiggs/ml62) was my first attempt. A very successful attempt in my opinion, but I came to discover that if I were to resolve some initial design decisions, I'd need to start over.
 
-As I was going to start again, it made sense to properly document everything as I went. I also decided that for the project to be most useful, I should include some things that I personally didn't require. The ML67 will be that base project and the ML62 will become a fork with my own drastic customisations.
+If I was going to start again, it made sense to properly document everything as I went. I also decided that for the project to be most useful, I should include some things that I personally didn't require myself. When I get this finished, ML67 will become the base project and ML62 will become a personal fork containing my own drastic customisations.
 
 
 ## The Design Criteria
