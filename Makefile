@@ -38,6 +38,10 @@
 # To rebuild project do "make clean" then "make all".
 #----------------------------------------------------------------------------
 
+# Path to Arduino.app
+ARDUINO_PATH = /Applications/Arduino.app
+export PATH := ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin:$(PATH)
+
 KEYMAP = plain
 # Target file name (without extension).
 TARGET = ml67_${KEYMAP}
