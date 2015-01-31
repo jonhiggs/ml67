@@ -4,6 +4,8 @@
 
 ![With TMK Firmware](./images/columns.png)
 
+![In Original Case](./images/usb_connector_in_place.png)
+
 
 ---
 
