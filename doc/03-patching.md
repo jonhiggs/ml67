@@ -6,9 +6,9 @@ A few tips to keep in mind before you get started.
 
 - If you are planing to use the original case, be careful not to obscure the holes that are drilled into the circuit board.
 
-- Tin the pins on the Teensy before you start.
+- Tin the pins on the Teensy before you begin.
 
-- You could use the original header for all this work. I was unable to find a connector to fit it though. If you find one, please let me know the product number.
+- You could use the original header for all this work. I was unable to find a connector to fit it. If you find one, please let me know the product number.
 
 
 ## Disassembly
@@ -26,7 +26,7 @@ At this point you should have a circuit board that looks like this.
 
 ## Positioning the Teensy
 
-We need to decide where we are going to put the Teensy. There are a couple of design considerations. 
+We need to decide where we are going to put the Teensy. There are a couple of design considerations.
 
 - Can you fit a USB cable into the plug?
 - Have you obscured any of the holes that the base uses to line up the board?
@@ -34,7 +34,7 @@ We need to decide where we are going to put the Teensy. There are a couple of de
 - Have you obscured the only point available for one of the pins? (unlikely regardless of where you use.)
 - Are most of the points nearby so you're not running silly amounts of wire around?
 
-The point I used was quite close to a hole in the board but it worked pretty good I thought.
+The point I used was quite close to a hole in the board but it worked pretty good I thought. There are probably many other good spots too.
 
 I placed my Teensy on the Filco board with some double-sided tape. I've also grounded the Filco using the solder pad on the underside of the Teensy.
 
@@ -43,7 +43,7 @@ I placed my Teensy on the Filco board with some double-sided tape. I've also gro
 
 ## Merging Columns
 
-On the underside of the Filco board, we need to short the columns we decided to merge in the [last chapter](). It doesn't matter which points you use, it's up to you.
+On the underside of the Filco board, we need to short the columns we decided to merge in the [last chapter](./02-circuit.md). It doesn't matter which one of the points you use.
 
 The columns that we will be joining are:  
 `C12` -> `C1`  
@@ -58,23 +58,25 @@ There is nothing special. Just join them up like that.
 
 ## Rows
 
-We'll do the rows before the columns because they are a bit trickier. We need to find a point to solder which is electrically equivalent to that of the original header. Specifically, there needs to be a diode between the switch and the Teensy. If you patch directly into the point marked `R` on the board, you will bypass the diode and cause yourself problems during simultaneous keystrokes.
+We'll do the rows before the columns because they are a bit trickier. We need to find a point to solder which is electrically equivalent to that of the original header. Specifically, there needs to be a diode between the switch and the Teensy. If you patch directly into the point marked `R#` on the board, you will bypass the diode and cause yourself problems during simultaneous keystrokes.
 
-The procedure I used to find the points to solder is:
+The procedure I used to find the points for soldering is:
 
 1. Connect a jumper into the header for the pin you wish to find. (`R0` is the bottom-right pin. `R1` is to the left of that. `R2` is to the left of that, and so on until `R7`.)
 
-2. Find a point on the board labelled the row you are looking for.
+2. Find a point on the board where the row is labelled.
 
-3. With your multimeter, check for continuity between the header pin and the solder points between the keys.
+3. With your multimeter, check for continuity between the header pin for that row and the solder points between the keys.
 
-4. Once you have found one, check nearby for alternative points that may be better. You can sometimes follow the traces.
+4. Once you have found one, check nearby for alternative points that may be more suitable. You can sometimes follow the traces.
 
-5. Mark with the corner of a piece of tape where you plan to solder to. It is otherwise very easy to accidentally solder to the wrong position.
+5. Mark with the corner of a piece of tape where you plan to solder. It is very easy to accidentally solder to the wrong position.
 
 6. Solder the other end to the Teensy.
 
 ![Finding Rows](../images/finding_rows.png)
+
+The yellow wire is a jumper cable that is in the `R2` pin of the header. The tape marks the point on the board where we are going to solder.
 
 The points to connect between the Filco and the Teensy are represented in the following table:
 
@@ -122,7 +124,7 @@ Once finished, my circuit looked like this.
 
 ## Reference
 
-You can see the usage of all the Teensy pins in this table.
+At this stage, the allocation of Teensy pins looks like this:
 
 | Filco  | Teensy |
 |--------|--------|
@@ -146,7 +148,7 @@ You can see the usage of all the Teensy pins in this table.
 | R5     | F7     |
 | R6     | B6     |
 | R7     | B5     |
-| D1     | D5     |
+| SPARE  | D5     |
 | SPARE  | D4     |
 | SPARE  | B4     |
 | SPARE  | D7     |
