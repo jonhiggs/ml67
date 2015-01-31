@@ -1,8 +1,9 @@
 # ML67
 
-![Hacking The Filco Minila](./images/columns.png)
+![Hacking The Filco Minila](./images/reassembled.png)
 
-![To This](./images/reassembled.png)
+![With TMK Firmware](./images/columns.png)
+
 
 ---
 
