@@ -1,4 +1,4 @@
-# Getting Started
+# 01. Getting Started
 
 Before you commit to anything, it's paramount that you can at least program your Teensy and it works. Preferably you'll also be able to compile from the source to build your own HEX files.
 
@@ -39,3 +39,4 @@ Among, some others, a file named `ml67_<keyboard_type>.hex` will be generated.
 
 Load `ml67_<keyboard_type>.hex` up in the [Teensy Loader]().
 
+**[Next](./02-circuit.md)**

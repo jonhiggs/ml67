@@ -1,4 +1,4 @@
-# LEDs
+# 05. LEDs
 
 The original Filco LED circuit looks like this:
 
@@ -22,3 +22,5 @@ You can see where I have broken a trace. Either side of that break is where you 
 ![LED On Teensy](../images/led_teensy.png)
 
 Made the way described, the scroll lock will always be on. You could connect it to an unused pin on the Teensy and have it do something else, but that's for you to hack in.
+
+**[Next](./06-usb_connector.md)**

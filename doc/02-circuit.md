@@ -1,6 +1,6 @@
-# Deciphering the Circuit
+# 02. Deciphering the Circuit
 
-If you are not interested in *how* it works, you can safely move on to the next section [Patching in](./patching).
+If you are not interested in *how* it works, you can safely move on to the next section [Patching in](./03-patching.md).
 
 It took a bit of experimenting and probing with a multimeter to work out the circuit. There is little use of you doing it yourself so I won't cover the tedious process of working out what went where.
 
@@ -58,6 +58,9 @@ Afterwards, the matrix will look like this:
 | R7 | K01 | K02 | K03 | K04 | K07 | K08 | K09 | K0A |     |     |     |     |
 
 Later on, I will cover the LEDs but for now, the important thing is to get the buttons working.
+
+
+**[Next](./03-patching.md)**
 
 ---
 

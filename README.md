@@ -27,8 +27,8 @@ I have mostly succeeded in fulfilling my design criteria. The one exception is t
 ## Table Of Contents
 
 1. [Getting Started](./doc/01-getting_started.md)
-2. [Circuit](./doc/02-circuit.md)
-3. [Patching](./doc/03-patching.md)
+2. [Deciphering the Circuit](./doc/02-circuit.md)
+3. [Patching In](./doc/03-patching.md)
 4. [TMK Firmware](./doc/04-tmk.md)
 5. [LEDs](./doc/05-leds.md)
 6. [USB Connector](./doc/06-usb_connector.md)

@@ -1,4 +1,4 @@
-# Patching In
+# 03. Patching In
 
 It's time to start patching into the Minila board so break out the tools.
 
@@ -151,3 +151,5 @@ You can see the usage of all the Teensy pins in this table.
 | SPARE  | B4     |
 | SPARE  | D7     |
 | SPARE  | D6     |
+
+**[Next](./04-tmk.md)**

@@ -1,4 +1,4 @@
-# USB Connector
+# 06. USB Connector
 
 There are a few ways you can go about connecting your computer to your Teensy.
 
@@ -49,3 +49,5 @@ Drop the LED covers back on then put the shroud on.
 ![Reassembled](../images/reassembled.png)
 
 Screw it together and you're all done. :)
+
+**[Next](./07-programing_button.md)**

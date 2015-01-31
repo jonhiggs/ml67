@@ -1,4 +1,4 @@
-# TMK Firmware
+# 04. TMK Firmware
 
 As I mentioned in [Chapter ?](), inside the TMK firmware, we need to flip our understanding of rows and columns. The reason is because the circuit doesn't work the other way around. I believe the problem is due to the direction of the diodes on the Filco board. I believe they are stopping all current, therefore causing none of the keys to register. Rather than disassemble the entire thing and turn all the diodes around (and force you all to do the same), I'm going to allow this inconsistency.
 
@@ -10,3 +10,6 @@ Now with that cleared up, I'll start to go through the firmware.
 ## Modifying the Code
 
 TODO
+
+
+**[Next](./05-leds.md)**
