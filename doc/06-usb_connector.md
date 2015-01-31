@@ -50,4 +50,4 @@ Drop the LED covers back on then put the shroud on.
 
 Screw it together and you're all done. :)
 
-**[Next](./07-programing_button.md)**
+**[Next](./07-programming_button.md)**
