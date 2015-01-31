@@ -24,9 +24,24 @@ As I was going to start again, it made sense to properly document everything as 
 I have mostly succeeded in fulfilling my design criteria. The one exception is the functioning USB hub. I've been unable to solder to such a fine circuit.
 
 
+## Tools and Stuff
+
+- Filco Minila (I'm using Matrix Ver1.0 2012/10/17. I can't guarantee that anything else will work).
+- Teensy 2
+- Wire. Red, black and four other colours of your choice.
+- Mini USB cable
+- Soldering Iron
+- Multimeter
+- Wire Cutters
+- Screwdrivers
+
+To give you an idea on how long it should take I would expect that you should get it done in a weekend pretty easily. Just in case, I wouldn't count on it working on Monday morning. Have a spare keyboard.
+
+Good luck in your own ML67 build.
+
+
 ## Table Of Contents
 
-0. [Introduction](./doc/00-introduction.md)
 1. [Getting Started](./doc/01-getting_started.md)
 2. [Deciphering the Circuit](./doc/02-circuit.md)
 3. [Patching In](./doc/03-patching.md)
