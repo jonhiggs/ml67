@@ -2,8 +2,7 @@
 
 If you are not interested in *how* it works, you can safely move on to the next section [Patching in](./03-patching.md).
 
-TODO: fix link (it's in Pocket).  
-If you don't understand how a keyboard matrix works, I recommend you take a look at [this](). It's pretty important to at least have a grasp on how a keyboard circuit works before you'll be able to make much sense of this chapter.
+If you don't understand how a keyboard matrix works, I recommend you take a look at [this](http://www.dribin.org/dave/keyboard/one_html/). It's pretty important to at least have a grasp on how a keyboard circuit works before you'll be able to make much sense of this chapter.
 
 My first job was to understand what each of the pins on the original header did. Working out the circuit took a bit of experimenting and probing with a multimeter. There is little use for you to do the same so I won't cover the tedious process. All that is important is the result.
 

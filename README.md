@@ -11,7 +11,7 @@
 
 ---
 
-This project is an attempt to fully document the hardware of the Filco Minila and describe how to hack the [tmk]() firmware in. When you are finished, you should have a *fully programmable* keyboard that looks identical to the original Minila.
+This project is an attempt to fully document the hardware of the Filco Minila and describe how to hack the [tmk](https://github.com/tmk/tmk_keyboard) firmware in. When you are finished, you should have a *fully programmable* keyboard that looks identical to the original Minila.
 
 The ML62 was my first attempt. A very successful attempt in my opinion, but I came to discover to resolve some initial design decisions, I'd need to start over.
 

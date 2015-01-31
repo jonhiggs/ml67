@@ -10,7 +10,7 @@ There are a few programs that you will need to install.
 - Arduino (v1.5.8)
 - Teensy Loader (v1.15)
 
-The [Arduino]() IDE contains the compiler to build your code into a HEX file that can be programmed onto the microcontroller.
+The [Arduino](http://www.arduino.cc/) IDE contains the compiler to build your code into a HEX file that can be programmed onto the microcontroller.
 
 The [Teensy Loader](https://www.pjrc.com/teensy/loader.html) is the tool that I use to program the microcontroller with the built HEX file.
 
