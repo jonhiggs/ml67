@@ -42,8 +42,8 @@
 ARDUINO_PATH = /Applications/Arduino.app
 export PATH := ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin:$(PATH)
 
-KEYMAP = plain
 # Target file name (without extension).
+KEYMAP = standard
 TARGET = ml67_${KEYMAP}
 
 # Directory common source files exist
@@ -87,14 +87,14 @@ NKRO_ENABLE = yes       # USB Nkey Rollover(+500)
 #PS2_MOUSE_ENABLE = yes  # PS/2 mouse(TrackPoint) support
 
 #---------------- Programming Options --------------------------
-AVRDUDE = /Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avrdude
+AVRDUDE = ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin/avrdude
 # Type: avrdude -c ? to get a full listing.
 AVRDUDE_PROGRAMMER = avr109
 AVRDUDE_MCU = atmega32u4
 AVRDUDE_PORT = /dev/tty.usbmodem411
 AVRDUDE_BAUD = 57600
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
-AVRDUDE_CFG = /Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf
+AVRDUDE_CFG = ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/etc/avrdude.conf
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
 
 # Uncomment the following if you want avrdude's erase cycle counter.
