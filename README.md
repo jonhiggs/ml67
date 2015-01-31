@@ -26,6 +26,7 @@ I have mostly succeeded in fulfilling my design criteria. The one exception is t
 
 ## Table Of Contents
 
+0. [Introduction](./doc/00-introduction.md)
 1. [Getting Started](./doc/01-getting_started.md)
 2. [Deciphering the Circuit](./doc/02-circuit.md)
 3. [Patching In](./doc/03-patching.md)

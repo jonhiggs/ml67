@@ -1,4 +1,4 @@
-# Introduction
+# 00. Introduction
 
 This document is how to take a standard [Filco Minila]() and hack in the [TMK firmware]().
 
@@ -24,3 +24,5 @@ I retrospectively tried to document the ML62 project long after most of the work
 To give you an idea on how long it should take I would expect that you should get it done in a weekend pretty easily. Just in case, I wouldn't count on it working on Monday morning. Have a spare keyboard.
 
 Good luck in your own ML67 build.
+
+**[Next](./01-getting_started.md)**
