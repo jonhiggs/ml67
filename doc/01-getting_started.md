@@ -3,14 +3,16 @@
 Before you commit to anything, it's paramount that you can at least program your Teensy and it works. Preferably you'll also be able to compile from the source to build your own HEX files.
 
 
-## Getting the Code
+## Download The Tools
 
-TODO
+There are a few programs that you will need to install.
 
-- get the tmk_keyboard repo.
-- git submodule init
-- git submodule update
-- add the ml67 repo as a submodule in the keyboards.
+- Arduino (v1.5.8)
+- Teensy Loader (v1.15)
+
+The [Arduino]() IDE contains the compiler to build your code into a HEX file that can be programmed onto the microcontroller.
+
+The [Teensy Loader](https://www.pjrc.com/teensy/loader.html) is the tool that I use to program the microcontroller with the built HEX file.
 
 
 ## Programming The Teensy
@@ -32,11 +34,19 @@ If that works then well done. Otherwise keep trying and don't proceed until you 
 **TODO: Write this section.**  
 For now, consult the internet. If you can't work it out, you won't be able to customise the firmware.
 
-make clean
-make <keyboard_type>
 
-Among, some others, a file named `ml67_<keyboard_type>.hex` will be generated.
+- get the tmk_keyboard repo.
+- git submodule init
+- git submodule update
+- add the ml67 repo as a submodule in the keyboards directory.
+- In the Makefile configure with the path to the Arduino.
+- Configure `KEYMAP` in the Makefile.
 
-Load `ml67_<keyboard_type>.hex` up in the [Teensy Loader]().
+make clean  
+make
+
+Among some others, a file named `ml67_<keymap>.hex` will be generated.
+
+Load `ml67_<keymap>.hex` up in the 'Teensy Loader'.
 
 **[Next](./02-circuit.md)**
