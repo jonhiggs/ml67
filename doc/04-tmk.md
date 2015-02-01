@@ -12,4 +12,13 @@ Now with that cleared up, I'll start to go through the firmware.
 TODO
 
 
+## Makefile Tasks
+
+`make git_update`  
+This will pull and checkout the latest origin/master.
+
+`make git_reset`  
+Loose all your local changes and revert to origin/master.
+
+
 **[Next](./05-leds.md)**
