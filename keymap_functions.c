@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 
 bool shifted() {
-    return ( ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT ) ) ;
+    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT );
 }
 
 bool controlled() {
@@ -63,7 +63,7 @@ void shift_esc_is_tilde(bool pressed) {
 
 void ctrl_h_is_backspace(bool pressed) {
     mods = get_mods();
-    if ( pressed() ) {
+    if (pressed) {
         // press the keys
         if ( controlled() ) {
             clear_mods();
