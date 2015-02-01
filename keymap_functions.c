@@ -62,7 +62,7 @@ void shift_esc_is_tilde(bool pressed) {
 }
 
 void ctrl_h_is_backspace(bool pressed) {
-    mods = get_mods();
+    uint8_t mods = get_mods();
     if (pressed) {
         // press the keys
         if ( controlled() ) {
