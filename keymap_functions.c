@@ -15,9 +15,21 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+bool shifted() {
+    return ( get_mods() & MOD_LSHFT ) || ( get_mods & MOD_RSFT );
+}
+
+bool controlled() {
+    return ( get_mods() & MOD_LCTRL || ( get_mods & MOD_RCTRL );
+}
+
+bool guied() {
+    return ( get_mods() & MOD_LGUI || ( get_mods & MOD_RGUI );
+}
+
 void shift_esc_is_tilde(bool pressed) {
     if (pressed) {
-        if (get_mods() & MOD_LSFT) {
+        if (shifted) {
             add_key(KC_GRV);
             send_keyboard_report();
         } else {
