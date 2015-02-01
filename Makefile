@@ -144,7 +144,8 @@ git_update:
 git_tests:
 	git checkout tests
 	git reset --hard
+	git fetch
 	git checkout origin/tests
 	git branch -D tests
 	git branch tests
-	git pull origin tests
+	git checkout tests
