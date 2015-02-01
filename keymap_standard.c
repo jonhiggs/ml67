@@ -1,5 +1,5 @@
 #include "keymap_common.h"
-#include "keymap_functions.h"
+#include "keymap_functions.c"
 
 /* KEYMAP
     K00,K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, K0E,\
