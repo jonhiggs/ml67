@@ -30,15 +30,15 @@ bool guied() {
     return ( get_mods() & MOD_LGUI ) || ( get_mods() & MOD_RGUI );
 }
 
-void reset_mod_bits() {
+void reset_mod_bits(uint8_t mods) {
     debug("Resetting the mod bits.\n");
 
-    if (get_mods() & MOD_LSFT ) {
+    if (mods & MOD_LSFT ) {
         debug("Turning LSFT back on.");
         add_mods(MOD_BIT(KC_LSFT));
     }
 
-    if (get_mods() & MOD_LCTL ) {
+    if (mods & MOD_LCTL ) {
         debug("Turning LCTL back on.");
         add_mods(MOD_BIT(KC_LCTL));
     }
@@ -62,13 +62,14 @@ void shift_esc_is_tilde(bool pressed) {
 }
 
 void ctrl_h_is_backspace(bool pressed) {
+    mods = get_mods()
     if (pressed) {
         // press the keys
         if (controlled) {
-            del_mods(MOD_BIT(KC_LCTRL));
+            clear_mods();
             add_key(KC_BSPC);
             send_keyboard_report();
-            reset_mod_bits();
+            reset_mod_bits(mods);
         } else {
             add_key(KC_H);
             send_keyboard_report();
