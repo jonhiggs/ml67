@@ -18,15 +18,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "action_util.h"
 
 bool shifted() {
-    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT);
+    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT );
 }
 
 bool controlled() {
-    return ( get_mods() & MOD_LCTL ) || ( get_mods & MOD_RCTL );
+    return ( get_mods() & MOD_LCTL ) || ( get_mods() & MOD_RCTL );
 }
 
 bool guied() {
-    return ( get_mods() & MOD_LGUI ) || ( get_mods & MOD_RGUI );
+    return ( get_mods() & MOD_LGUI ) || ( get_mods() & MOD_RGUI );
 }
 
 void reset_mod_bits() {

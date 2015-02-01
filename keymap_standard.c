@@ -71,28 +71,12 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 
   switch (id) {
     case BACKSPACE:
-      if (event.pressed) {
-        // press the keys
-        if (get_mods() & MOD_LCTL) {
-          del_mods(MOD_BIT(KC_LCTRL));
-          add_key(KC_BSPC);
-          send_keyboard_report();
-          add_mods(MOD_BIT(KC_LCTRL));
-        } else {
-          add_key(KC_H);
-          send_keyboard_report();
-        }
-      } else {
-        // release the keys.
-        del_key(KC_BSPC);
-        del_key(KC_H);
-        send_keyboard_report();
-      }
-      break;
+        ctrl_h_is_backspace(event.pressed);
+        break;
 
     case ESC:
-      shift_esc_is_tilde(event.pressed);
-      break;
+        shift_esc_is_tilde(event.pressed);
+        break;
 
     case HOME:
       if (event.pressed) {
