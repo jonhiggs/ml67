@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 
 bool shifted() {
-    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT );
+    return ( ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT ) ) ;
 }
 
 bool controlled() {
