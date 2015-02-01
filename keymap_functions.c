@@ -32,6 +32,9 @@ bool guied() {
 void reset_mod_bits() {
     if (get_mods() & MOD_LSFT )
         add_mods(MOD_BIT(KC_LSFT));
+
+    if (get_mods() & MOD_LCTL )
+        add_mods(MOD_BIT(KC_LCTL));
 }
 
 void shift_esc_is_tilde(bool pressed) {
