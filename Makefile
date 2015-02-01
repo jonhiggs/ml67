@@ -136,3 +136,7 @@ update:
 	git branch master
 	git pull origin master
 	git checkout master
+
+clean:
+	rm ml67_*
+	rm obj_ml67_*
