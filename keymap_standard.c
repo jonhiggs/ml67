@@ -91,21 +91,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
       break;
 
     case ESC:
-      if (event.pressed) {
-        // press the keys
-        if (get_mods() & MOD_LSFT) {
-          add_key(KC_GRV);
-          send_keyboard_report();
-        } else {
-          add_key(KC_ESC);
-          send_keyboard_report();
-        }
-      } else {
-        // release the keys.
-        del_key(KC_GRV);
-        del_key(KC_ESC);
-        send_keyboard_report();
-      }
+      shift_esc_is_tilde(event.pressed);
       break;
 
     case HOME:
