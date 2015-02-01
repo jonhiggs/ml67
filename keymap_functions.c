@@ -15,16 +15,23 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "action_util.h"
+
 bool shifted() {
-    return ( get_mods() & MOD_LSHFT ) || ( get_mods & MOD_RSFT );
+    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT);
 }
 
 bool controlled() {
-    return ( get_mods() & MOD_LCTRL || ( get_mods & MOD_RCTRL );
+    return ( get_mods() & MOD_LCTL ) || ( get_mods & MOD_RCTL );
 }
 
 bool guied() {
-    return ( get_mods() & MOD_LGUI || ( get_mods & MOD_RGUI );
+    return ( get_mods() & MOD_LGUI ) || ( get_mods & MOD_RGUI );
+}
+
+void reset_mod_bits() {
+    if (get_mods() & MOD_LSFT )
+        add_mods(MOD_BIT(KC_LSFT));
 }
 
 void shift_esc_is_tilde(bool pressed) {
@@ -40,6 +47,26 @@ void shift_esc_is_tilde(bool pressed) {
         // release the keys.
         del_key(KC_GRV);
         del_key(KC_ESC);
+        send_keyboard_report();
+    }
+}
+
+void ctrl_h_is_backspace(bool pressed) {
+    if (pressed) {
+        // press the keys
+        if (controlled) {
+            del_mods(MOD_BIT(KC_LCTRL));
+            add_key(KC_BSPC);
+            send_keyboard_report();
+            reset_mod_bits();
+        } else {
+            add_key(KC_H);
+            send_keyboard_report();
+        }
+    } else {
+        // release the keys.
+        del_key(KC_BSPC);
+        del_key(KC_H);
         send_keyboard_report();
     }
 }
