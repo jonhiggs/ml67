@@ -129,3 +129,9 @@ include $(TOP_DIR)/rules.mk
 
 plain: OPT_DEFS += -DKEYMAP_PLAIN
 plain: all
+
+update:
+	git checkout origin/master
+	git branch -D master
+	git branch master
+	git pull origin/master
