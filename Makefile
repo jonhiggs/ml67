@@ -130,13 +130,13 @@ include $(TOP_DIR)/rules.mk
 plain: OPT_DEFS += -DKEYMAP_PLAIN
 plain: all
 
-update:
+git_reset:
+	git reset --hard
 	git checkout origin/master
 	git branch -D master
 	git branch master
 	git pull origin master
-	git checkout master
 
-clean:
-	rm ml67_*
-	rm obj_ml67_*
+git_update:
+	git checkout master
+	git pull origin master
