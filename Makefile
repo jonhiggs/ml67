@@ -134,4 +134,5 @@ update:
 	git checkout origin/master
 	git branch -D master
 	git branch master
-	git pull origin/master
+	git pull origin master
+	git checkout master
