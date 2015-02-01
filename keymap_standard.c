@@ -30,10 +30,10 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LCTL, LALT, LGUI, FN1,              SPC,              FN1,  RGUI, RALT, LEFT, DOWN, RGHT \
     ),
     KEYMAP(   // LAYER 1: Function1
-      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,\
-      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,      \
-      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS,      \
-      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS,\
+      GRV,  F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,  TRNS, TRNS,\
+      TRNS, TRNS, TRNS, UP,   TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,      \
+      TRNS, TRNS, LEFT, DOWN, RGHT, TRNS, TRNS, INS,  HOME, PGUP, BSPC, TRNS,       TRNS,      \
+      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, DEL,  END,  PGDN, TRNS,       TRNS, TRNS, TRNS,\
       TRNS, TRNS, TRNS, TRNS,             TRNS,             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS \
     ),
 };
