@@ -46,7 +46,7 @@ void reset_mod_bits(mods) {
 
 void shift_esc_is_tilde(bool pressed) {
     if (pressed) {
-        if (shifted) {
+        if ( shifted() ) {
             add_key(KC_GRV);
             send_keyboard_report();
         } else {
@@ -63,9 +63,9 @@ void shift_esc_is_tilde(bool pressed) {
 
 void ctrl_h_is_backspace(bool pressed) {
     mods = get_mods();
-    if (pressed) {
+    if ( pressed() ) {
         // press the keys
-        if (controlled) {
+        if ( controlled() ) {
             clear_mods();
             add_key(KC_BSPC);
             send_keyboard_report();
