@@ -140,3 +140,11 @@ git_reset:
 git_update:
 	git checkout master
 	git pull origin master
+
+git_tests:
+	git checkout tests
+	git reset --hard
+	git checkout origin/tests
+	git branch -D tests
+	git branch tests
+	git pull origin tests
