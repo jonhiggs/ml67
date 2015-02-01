@@ -30,7 +30,7 @@ bool guied() {
     return ( get_mods() & MOD_LGUI ) || ( get_mods() & MOD_RGUI );
 }
 
-void reset_mod_bits(uint8_t mods) {
+void reset_mod_bits(mods) {
     debug("Resetting the mod bits.\n");
 
     if (mods & MOD_LSFT ) {
