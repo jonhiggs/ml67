@@ -26,7 +26,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(   // LAYER 0: Default
       FN10, 1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, EQL,  BSPC, GRV, \
       TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, BSLS,      \
-      CAPS, A,    S,    D,    F,    G,    H,    J,    K,    L,    SCLN, QUOT,       ENT,       \
+      CAPS, A,    S,    D,    F,    G,    FN13, J,    K,    L,    SCLN, QUOT,       ENT,       \
       LSFT, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH,       RSFT, UP,   DEL, \
       LCTL, LGUI, LALT, FN1,              SPC,              FN1,  RALT, RGUI, LEFT, DOWN, RGHT \
     ),
@@ -41,7 +41,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* id for user defined functions */
 enum function_id {
-    BACKSPACE,
+    CTRL_H,
     ESC,
     HOME,
     SPACE,
@@ -58,7 +58,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [2] = ACTION_LAYER_MOMENTARY(2),          // FN2 switch to layer 2
     [10] = ACTION_FUNCTION(ESC),              // Special ESC key.
     [11] = ACTION_FUNCTION(SPACE),            // Special Space Key.
-    [13] = ACTION_FUNCTION(BACKSPACE),        // Ctrl-H sends backspace.
+    [13] = ACTION_FUNCTION(CTRL_H),           // Ctrl-H sends backspace.
     [14] = ACTION_FUNCTION(HOME),             // Ctrl-A sends home.
     [15] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
     [16] = ACTION_FUNCTION(DEL_WORD),         // Alt-Backspace deletes a word.
@@ -70,7 +70,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
   tap_t tap = record->tap;
 
   switch (id) {
-    case BACKSPACE:
+    case CTRL_H:
         ctrl_h_is_backspace(event.pressed);
         break;
 
