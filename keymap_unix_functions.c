@@ -144,7 +144,7 @@ void tmux(bool pressed) {
     }
 }
 
-void del_word(bool pressed) {
+void special_backspaces(bool pressed) {
     uint8_t mods = get_mods();
 
     if (event.pressed) {
