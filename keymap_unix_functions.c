@@ -85,10 +85,7 @@ void shift_esc_is_tilde(bool pressed) {
             send_keyboard_report();
         }
     } else {
-        // release the keys.
-        del_key(KC_GRV);
-        del_key(KC_ESC);
-        send_keyboard_report();
+        clear_keyboard_but_mods();
     }
 }
 
@@ -106,10 +103,7 @@ void ctrl_h_is_backspace(bool pressed) {
             send_keyboard_report();
         }
     } else {
-        // release the keys.
-        del_key(KC_BSPC);
-        del_key(KC_H);
-        send_keyboard_report();
+        clear_keyboard_but_mods();
     }
 }
 
@@ -127,10 +121,7 @@ void ctrl_a_is_home(bool pressed) {
             send_keyboard_report();
         }
     } else {
-        // release the keys.
-        del_key(KC_HOME);
-        del_key(KC_A);
-        send_keyboard_report();
+        clear_keyboard_but_mods();
     }
 }
 
