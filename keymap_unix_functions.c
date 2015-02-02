@@ -36,41 +36,45 @@ bool alted() {
 
 bool shift_alted() {
     return (( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT )) &&
-               (( get_mods() & MOD_LALT ) || ( get_mods() & MOD_RALT ));
+        (( get_mods() & MOD_LALT ) || ( get_mods() & MOD_RALT ));
 }
 
 void reset_mod_bits(mods) {
-    debug("Resetting the mod bits.\n");
+    debug("The Mod Bits are ");
+    debug_bin(get_mods());
+    debug("\nThe Mod Bits should be");
+    debug_bin(mods);
+    debug("\n");
 
     /* Maybe this can be done in a loop */
 
     if (mods & MOD_LSFT ) {
-        debug("Turning LSFT back on.");
+        debugln("Turning LSFT back on.");
         add_mods(MOD_BIT(KC_LSFT));
     }
 
     if (mods & MOD_RSFT ) {
-        debug("Turning RSFT back on.");
+        debugln("Turning RSFT back on.");
         add_mods(MOD_BIT(KC_RSFT));
     }
 
     if (mods & MOD_LCTL ) {
-        debug("Turning LCTL back on.");
+        debugln("Turning LCTL back on.");
         add_mods(MOD_BIT(KC_LCTL));
     }
 
     if (mods & MOD_RCTL ) {
-        debug("Turning RCTL back on.");
+        debugln("Turning RCTL back on.");
         add_mods(MOD_BIT(KC_RCTL));
     }
 
     if (mods & MOD_LALT ) {
-        debug("Turning LALT back on.");
+        debugln("Turning LALT back on.");
         add_mods(MOD_BIT(KC_LALT));
     }
 
     if (mods & MOD_RALT ) {
-        debug("Turning RALT back on.");
+        debugln("Turning RALT back on.");
         add_mods(MOD_BIT(KC_RALT));
     }
 }
