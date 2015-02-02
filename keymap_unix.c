@@ -1,0 +1,72 @@
+#include "keymap_common.h"
+#include "keymap_unix_functions.c"
+
+const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    KEYMAP(   // LAYER 0: Default
+      FN13, 1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, EQL,  BSLS, GRV, \
+      TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    LBRC, RBRC, FN10,      \
+      LCTL, FN12, S,    D,    F,    G,    FN11, J,    K,    L,    SCLN, QUOT,       ENT,       \
+      LSFT, Z,    X,    C,    V,    B,    N,    M,    COMM, DOT,  SLSH,       RSFT, UP,   NO , \
+      FN14, NO,   FN1,  LGUI,             SPC,              RALT,  FN1, NO,   LEFT, DOWN, RGHT \
+    ),
+    KEYMAP(   // LAYER 1: Function1
+      TRNS, F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,SYSREQ, NO, \
+      TRNS, NO,   NO,   END,  NO,   NO,   NO,   PGUP, NO,   NO,   NO,   NO,   NO, DELETE,     \
+      TRNS, HOME, NO,   PGDN, NO,   NO,   LEFT, DOWN, UP,   RGHT, NO,   NO,         NO,       \
+      TRNS, NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,         NO,   NO,   NO, \
+      TRNS, TRNS, TRNS, TRNS,             SPC,              NO,   NO,   NO,   NO,   NO,   NO  \
+    ),
+    KEYMAP(   // LAYER 2: Function2
+      TRNS, F14,  F15,  NO,   NO,   NO,   NO,   MPRV, MPLY, MNXT, MUTE, VOLD, VOLU, NO,   NO,  \
+      TRNS, NO,   NO,   UP,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,        \
+      TRNS, NO,   LEFT, DOWN, RGHT, NO,   NO,   INS,  HOME, PGUP, BSPC, NO,         NO,        \
+      CAPS, NO,   NO,   NO,   NO,   NO,   NO,   DEL,  END,  PGDN, NO,         NO,   NO,   NO,  \
+      NO,   NO,   NO,   NO,               NO,               NO,   NO,   NO,   NO,   NO,   NO   \
+    ),
+};
+
+// id for user defined functions
+enum function_id {
+    BACKSPACE,
+    CTRL_A,
+    CTRL_H,
+    ESC,
+    TMUX,
+};
+
+// Fn action definition
+const uint16_t PROGMEM fn_actions[] = {
+    [1] = ACTION_LAYER_MOMENTARY(1),          // FN1 switch to layer 1
+    [2] = ACTION_LAYER_MOMENTARY(2),          // FN2 switch to layer 2
+    [10] = ACTION_FUNCTION(BACKSPACE),        // Alt-Backspace deletes a word.
+    [11] = ACTION_FUNCTION(CTRL_H),           // Ctrl-H sends backspace.
+    [12] = ACTION_FUNCTION(CTRL_A),           // Ctrl-A sends home.
+    [13] = ACTION_FUNCTION(ESC),              // Special ESC key.
+    [14] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
+};
+
+void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    keyevent_t event = record->event;
+
+    switch (id) {
+        case CTRL_H:
+            ctrl_h_is_backspace(event.pressed);
+            break;
+
+        case ESC:
+            shift_esc_is_tilde(event.pressed);
+            break;
+
+        case CTRL_A:
+            ctrl_a_is_home(event.pressed);
+            break;
+
+        case TMUX:
+            tmux(event.pressed);
+            break;
+
+        case BACKSPACE:
+            special_backspaces(event.pressed);
+            break;
+    }
+}

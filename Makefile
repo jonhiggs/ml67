@@ -43,7 +43,7 @@ ARDUINO_PATH = /Applications/Arduino.app
 export PATH := ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin:$(PATH)
 
 # Target file name (without extension).
-KEYMAP = standard
+KEYMAP = unix
 TARGET = ml67_${KEYMAP}
 
 # Directory common source files exist

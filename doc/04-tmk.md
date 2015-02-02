@@ -12,6 +12,14 @@ Now with that cleared up, I'll start to go through the firmware.
 TODO
 
 
+## Choosing Which Keymap
+
+| keymap        | Description                                           |
+|---------------|-------------------------------------------------------|
+| Standard      | The keymap that comes on the Filco by default.        |
+| Unix          | A keymap built for a UNIX console.                    |
+
+
 ## Makefile Tasks
 
 `make git_update`  
@@ -21,4 +29,7 @@ This will pull and checkout the latest origin/master.
 Loose all your local changes and revert to origin/master.
 
 
+
+
 **[Next](./05-leds.md)**
+

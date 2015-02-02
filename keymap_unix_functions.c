@@ -144,10 +144,10 @@ void tmux(bool pressed) {
     }
 }
 
-void del_word(bool pressed) {
+void special_backspaces(bool pressed) {
     uint8_t mods = get_mods();
 
-    if (event.pressed) {
+    if (pressed) {
         if ( shift_alted() ) {
             /* forward delete word. */
             /* ESC, D */
@@ -157,7 +157,7 @@ void del_word(bool pressed) {
             send_keyboard_report();
             add_key(KC_D);
             send_keyboard_report();
-            reset_mod_bits(mods)
+            reset_mod_bits(mods);
         } else if ( alted() ) {
             /* backwards delete word. */
             /* ESC, BSPC */
@@ -168,14 +168,14 @@ void del_word(bool pressed) {
             send_keyboard_report();
             add_key(KC_BSPC);
             send_keyboard_report();
-            reset_mod_bits(mods)
+            reset_mod_bits(mods);
         } else if ( shifted() ) {
             /* forward delete. */
             /* DELETE */
             clear_mods();
             add_key(KC_DELETE);
             send_keyboard_report();
-            reset_mod_bits(mods)
+            reset_mod_bits(mods);
         } else {
             // backwards delete
             add_key(KC_BSPC);
