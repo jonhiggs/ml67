@@ -52,6 +52,9 @@ void reset_mod_bits(mods) {
     debug("\nThe Mod Bits should be ");
     debug_bin(mods);
     debug("\n");
+    debug("MOD_BIT KC_LSFT: ");
+    debug_bin(MOD_BIT(KC_LSFT));
+    debug("\n");
 
     /* Maybe this can be done in a loop */
 
