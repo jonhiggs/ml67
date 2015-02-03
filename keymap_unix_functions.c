@@ -27,66 +27,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 bool controlled() {
-    return ( get_mods() & (1 << 0) != 0 );
+    return ((get_mods() & (1 << 0)) != 0);
 }
 
 bool shifted() {
-    return ( get_mods() & (1 << 1) != 0 );
+    return ((get_mods() & (1 << 1)) != 0 );
 }
 
 bool alted() {
-    return ( get_mods() & (1 << 2) != 0 );
+    return ((get_mods() & (1 << 2)) != 0 );
 }
 
 bool guied() {
-    return ( get_mods() & (1 << 3) != 0 );
+    return ((get_mods() & (1 << 3)) != 0 );
 }
 
 bool shift_alted() {
     return shifted() && alted();
-}
-
-void reset_mod_bits(mods) {
-    debug("The Mod Bits are ");
-    debug_bin(get_mods());
-    debug("\nThe Mod Bits should be ");
-    debug_bin(mods);
-    debug("\n");
-    debug("MOD_BIT KC_LSFT: ");
-    debug_bin(MOD_BIT(KC_LSFT));
-    debug("\n");
-
-    /* Maybe this can be done in a loop */
-
-    if (mods & MOD_LSFT ) {
-        debugln("Turning LSFT back on.");
-        add_mods(MOD_BIT(KC_LSFT));
-    }
-
-    if (mods & MOD_RSFT ) {
-        debugln("Turning RSFT back on.");
-        add_mods(MOD_BIT(KC_RSFT));
-    }
-
-    if (mods & MOD_LCTL ) {
-        debugln("Turning LCTL back on.");
-        add_mods(MOD_BIT(KC_LCTL));
-    }
-
-    if (mods & MOD_RCTL ) {
-        debugln("Turning RCTL back on.");
-        add_mods(MOD_BIT(KC_RCTL));
-    }
-
-    if (mods & MOD_LALT ) {
-        debugln("Turning LALT back on.");
-        add_mods(MOD_BIT(KC_LALT));
-    }
-
-    if (mods & MOD_RALT ) {
-        debugln("Turning RALT back on.");
-        add_mods(MOD_BIT(KC_RALT));
-    }
 }
 
 void shift_esc_is_tilde(bool pressed) {
@@ -111,7 +68,7 @@ void ctrl_h_is_backspace(bool pressed) {
             clear_mods();
             add_key(KC_BSPC);
             send_keyboard_report();
-            reset_mod_bits(mods);
+            add_mods(mods);
         } else {
             add_key(KC_H);
             send_keyboard_report();
@@ -129,7 +86,7 @@ void ctrl_a_is_home(bool pressed) {
             clear_mods();
             add_key(KC_HOME);
             send_keyboard_report();
-            reset_mod_bits(mods);
+            add_mods(mods);
         } else {
             add_key(KC_A);
             send_keyboard_report();
@@ -162,7 +119,7 @@ void special_backspaces(bool pressed) {
             send_keyboard_report();
             add_key(KC_D);
             send_keyboard_report();
-            reset_mod_bits(mods);
+            add_mods(mods);
         } else if ( alted() ) {
             /* backwards delete word. */
             /* ESC, BSPC */
@@ -173,14 +130,14 @@ void special_backspaces(bool pressed) {
             send_keyboard_report();
             add_key(KC_BSPC);
             send_keyboard_report();
-            reset_mod_bits(mods);
+            add_mods(mods);
         } else if ( shifted() ) {
             /* forward delete. */
             /* DELETE */
             clear_mods();
             add_key(KC_DELETE);
             send_keyboard_report();
-            reset_mod_bits(mods);
+            add_mods(mods);
         } else {
             // backwards delete
             add_key(KC_BSPC);
