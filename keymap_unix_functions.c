@@ -1,5 +1,5 @@
 /*
-Copyright 2012,2013 Jon Higgs <jhiggs@eml.cc>
+Copyright 2015 Jon Higgs <jhiggs@eml.cc>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,31 +18,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "action_util.h"
 #include "debug.h"
 
-bool shifted() {
-    return ( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT );
-}
+ /*
+ *   bit 0      ||||+- Control
+ *   bit 1      |||+-- Shift
+ *   bit 2      ||+--- Alt
+ *   bit 3      |+---- Gui
+ *   bit 4      +----- LR flag(Left:0, Right:1)
+ */
 
 bool controlled() {
-    return ( get_mods() & MOD_LCTL ) || ( get_mods() & MOD_RCTL );
+    return ( get_mods() & (1 << 0) != 0 );
 }
 
-bool guied() {
-    return ( get_mods() & MOD_LGUI ) || ( get_mods() & MOD_RGUI );
+bool shifted() {
+    return ( get_mods() & (1 << 1) != 0 );
 }
 
 bool alted() {
-    return ( get_mods() & MOD_LALT ) || ( get_mods() & MOD_RALT );
+    return ( get_mods() & (1 << 2) != 0 );
+}
+
+bool guied() {
+    return ( get_mods() & (1 << 3) != 0 );
 }
 
 bool shift_alted() {
-    return (( get_mods() & MOD_LSFT ) || ( get_mods() & MOD_RSFT )) &&
-        (( get_mods() & MOD_LALT ) || ( get_mods() & MOD_RALT ));
+    return shifted() && alted();
 }
 
 void reset_mod_bits(mods) {
     debug("The Mod Bits are ");
     debug_bin(get_mods());
-    debug("\nThe Mod Bits should be");
+    debug("\nThe Mod Bits should be ");
     debug_bin(mods);
     debug("\n");
 
