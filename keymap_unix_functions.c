@@ -19,20 +19,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 
  /*
- *   bit 0      ||||+- Control
- *   bit 1      |||+-- Shift
- *   bit 2      ||+--- Alt
- *   bit 3      |+---- Gui
- *   bit 4      +----- LR flag(Left:0, Right:1)
+ *   bit 0      ||||+- Left_Control
+ *   bit 1      |||+-- Left_Shift
+ *   bit 2      ||+--- Left_Alt
+ *   bit 3      |+---- Left_Gui
+ *   bit 4      ||||+- Right_Control
+ *   bit 5      |||+-- Right_Shift
+ *   bit 6      ||+--- Right_Alt
+ *   bit 7      |+---- Right_Gui
  */
 
 bool controlled() {
-    return ((get_mods() & (1 << 0)) != 0);
+    return ((get_mods() & (1 << 0)) != 0) || ((get_mods() & (1 << 4)) != 0);
 }
 
 bool shifted() {
-    debug("\n"); debug_bin(get_mods()); debug("\n");
-    return ((get_mods() & (1 << 1)) != 0 );
+    return ((get_mods() & (1 << 1)) != 0) || ((get_mods() & (1 << 5)) != 0);
 }
 
 bool alted() {
