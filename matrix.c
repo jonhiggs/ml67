@@ -147,6 +147,10 @@ uint8_t matrix_key_count(void)
   | R5    | F7     |
   | R6    | B6     |
   | R7    | B5     |
+
+  | FOOT  | TEENSY |
+  |-------|--------|
+  | R8    | D4     |
 */
 
 static void  init_cols(void)
@@ -155,6 +159,8 @@ static void  init_cols(void)
     PORTF |=  0b11110011;
     DDRB  &= ~0b01100000;
     PORTB |=  0b01100000;
+    DDRD  &= ~0b00010000;
+    PORTD |=  0b00010000;
 }
 
 static matrix_row_t read_cols(void)
@@ -166,7 +172,8 @@ static matrix_row_t read_cols(void)
            (PINF&(1<<6) ? 0 : (1<<4) ) |
            (PINF&(1<<7) ? 0 : (1<<5) ) |
            (PINB&(1<<6) ? 0 : (1<<6) ) |
-           (PINB&(1<<5) ? 0 : (1<<7) ) ;
+           (PINB&(1<<5) ? 0 : (1<<7) ) |
+           (PIND&(1<<4) ? 0 : (1<<8) ) ;
 }
 
 /* IMPORTANT: TMK rows are Filco columns due to the direction of the diodes in
@@ -186,6 +193,11 @@ static matrix_row_t read_cols(void)
   | C10    | D3     |
   | C11    | C6     |
   | C15    | C7     |
+
+  | FOOT  | TEENSY |
+  |-------|--------|
+  | C16   | D6     |
+  | C17   | D7     |
 */
 
 static void unselect_rows(void)
@@ -194,8 +206,8 @@ static void unselect_rows(void)
     PORTB &= ~0b10001111;
     DDRE  &= ~0b01000000;
     PORTE &= ~0b01000000;
-    DDRD  &= ~0b00001111;
-    PORTD &= ~0b00001111;
+    DDRD  &= ~0b11001111;
+    PORTD &= ~0b11001111;
     DDRC  &= ~0b11000000;
     PORTC &= ~0b11000000;
 }
@@ -250,6 +262,14 @@ static void select_row(uint8_t row)
         case 11:
             DDRC  |= (1<<7);
             PORTC &= ~(1<<7);
+            break;
+        case 12:
+            DDRD  |= (1<<6);
+            PORTD &= ~(1<<6);
+            break;
+        case 13:
+            DDRD  |= (1<<7);
+            PORTD &= ~(1<<7);
             break;
     }
 }
