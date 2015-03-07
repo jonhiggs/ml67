@@ -130,7 +130,7 @@ void special_backspaces(bool pressed) {
             add_key(KC_BSPC);
             send_keyboard_report();
             add_mods(mods);
-        } else if ( shifted() ) {
+        } else if ( controlled() ) {
             /* forward delete. */
             /* DELETE */
             clear_mods();
