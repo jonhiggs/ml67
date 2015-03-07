@@ -75,10 +75,10 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
         case PROGRAMMING:
             clear_keyboard();
-            print("\n\nJump to bootloader... ");
+            debug("\n\nJump to bootloader... ");
             _delay_ms(1000);
             bootloader_jump(); // not return
-            print("not supported.\n");
+            debug("not supported.\n");
             break;
     }
 }
