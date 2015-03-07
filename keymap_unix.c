@@ -1,5 +1,7 @@
 #include "keymap_common.h"
 #include "keymap_unix_functions.c"
+#include "command.h"
+#include "bootloader.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(   // LAYER 0: Default
@@ -17,7 +19,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TRNS, TRNS, TRNS, TRNS,             SPC,              TRNS, TRNS, NO,   NO,   NO,   NO  \
     ),
     KEYMAP(   // LAYER 2: Function2
-      TRNS, F14,  F15,  NO,   NO,   NO,   NO,   MPRV, MPLY, MNXT, MUTE, VOLD, VOLU, NO,   NO,  \
+      FN15, F14,  F15,  NO,   NO,   NO,   NO,   MPRV, MPLY, MNXT, MUTE, VOLD, VOLU, NO,   NO,  \
       TRNS, NO,   NO,   UP,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,        \
       TRNS, NO,   LEFT, DOWN, RGHT, NO,   NO,   INS,  HOME, PGUP, BSPC, NO,         NO,        \
       CAPS, NO,   NO,   NO,   NO,   NO,   NO,   DEL,  END,  PGDN, NO,         TRNS, NO,   NO,  \
@@ -31,6 +33,7 @@ enum function_id {
     CTRL_A,
     CTRL_H,
     ESC,
+    PROGRAMMING,
     TMUX,
 };
 
@@ -43,6 +46,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [12] = ACTION_FUNCTION(CTRL_A),           // Ctrl-A sends home.
     [13] = ACTION_FUNCTION(ESC),              // Special ESC key.
     [14] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
+    [15] = ACTION_FUNCTION(PROGRAMMING),      // Program the Teensy.
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -67,6 +71,14 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
         case BACKSPACE:
             special_backspaces(event.pressed);
+            break;
+
+        case PROGRAMMING:
+            clear_keyboard();
+            print("\n\nJump to bootloader... ");
+            _delay_ms(1000);
+            bootloader_jump(); // not return
+            print("not supported.\n");
             break;
     }
 }
