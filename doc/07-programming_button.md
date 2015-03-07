@@ -1,7 +1,6 @@
 # 07. Programming Button
 
-It's going to be extremely annoying to have to pull your keyboard apart to reprogram it.
+I was going to make the programming button in hardware but it turns out that wasn't needed. FN2+ESC is now be the equivalent to pressing the button on your Teensy.
 
-I'm going to modify the behaviour of one of the dip switches to the bottom.
-
-TODO: actually do this step
+- [Commit](https://github.com/jonhiggs/ml67/commit/804ff3a791a667b2b29ef5e3bd749f3a4811a754)
+- [Idea came from here](https://github.com/tmk/tmk_keyboard/issues/187)
