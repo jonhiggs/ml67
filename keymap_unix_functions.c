@@ -38,15 +38,11 @@ bool shifted() {
 }
 
 bool alted() {
-    return ((get_mods() & (1 << 2)) != 0 );
+    return ((get_mods() & (1 << 2)) != 0) || ((get_mods() & (1 << 6)) != 0);
 }
 
 bool guied() {
-    return ((get_mods() & (1 << 3)) != 0 );
-}
-
-bool shift_alted() {
-    return shifted() && alted();
+    return ((get_mods() & (1 << 3)) != 0) || ((get_mods() & (1 << 7)) != 0);
 }
 
 void shift_esc_is_tilde(bool pressed) {
@@ -113,7 +109,8 @@ void special_backspaces(bool pressed) {
     uint8_t mods = get_mods();
 
     if (pressed) {
-        if ( shift_alted() ) {
+        if ( shifted() && alted() ) {
+            /* FIXME: this doesn't work for some reason */
             /* forward delete word. */
             /* ESC, D */
             clear_mods();
