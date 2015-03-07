@@ -27,18 +27,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 bool controlled() {
+    debug("\nControlled");
     return ((get_mods() & (1 << 0)) != 0);
 }
 
 bool shifted() {
+    debug("\nShifted");
     return ((get_mods() & (1 << 1)) != 0 );
 }
 
 bool alted() {
+    debug("\nAlted");
     return ((get_mods() & (1 << 2)) != 0 );
 }
 
 bool guied() {
+    debug("\nGuied");
     return ((get_mods() & (1 << 3)) != 0 );
 }
 
