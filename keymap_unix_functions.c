@@ -110,7 +110,6 @@ void special_backspaces(bool pressed) {
 
     if (pressed) {
         if ( shifted() && alted() ) {
-            /* FIXME: this doesn't work for some reason */
             /* forward delete word. */
             /* ESC, D */
             clear_mods();
@@ -139,7 +138,8 @@ void special_backspaces(bool pressed) {
             send_keyboard_report();
             add_mods(mods);
         } else {
-            // backwards delete
+            /* backwards delete */
+            /* BSPC */
             add_key(KC_BSPC);
             send_keyboard_report();
         }
