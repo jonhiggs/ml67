@@ -42,7 +42,7 @@ enum function_id {
 
 // Fn action definition
 const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_MOMENTARY(1),          // FN1 switch to layer 1
+    [1] = ACTION_LAYER_TAP_TOGGLE(1),          // FN1 switch to layer 1
     [2] = ACTION_LAYER_MOMENTARY(2),          // FN2 switch to layer 2
     [10] = ACTION_FUNCTION(BACKSPACE),        // Alt-Backspace deletes a word.
     [11] = ACTION_FUNCTION(CTRL_H),           // Ctrl-H sends backspace.
