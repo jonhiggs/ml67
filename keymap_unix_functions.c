@@ -153,6 +153,7 @@ void osx_sleep(bool pressed) {
         /* CTRL + SHIFT + EJECT will put a Mac to sleep. */
         add_mods(MOD_BIT(KC_LCTRL));
         add_mods(MOD_BIT(KC_LSHIFT));
+        send_keyboard_report();
         add_key(KC_EJCT);
         send_keyboard_report();
         clear_keyboard();
