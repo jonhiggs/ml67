@@ -93,10 +93,8 @@ void tmux(bool pressed) {
 void special_esc(bool pressed) {
     if (pressed) {
         if (shifted() || guied()) {
-            debug("\nEsc is a Backtick");
             add_key(KC_GRV);
         } else {
-            debug("\nEsc is an Esc");
             add_key(KC_ESC);
         }
         send_keyboard_report();
