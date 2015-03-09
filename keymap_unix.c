@@ -61,7 +61,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
             break;
 
         case ESC:
-            shift_esc_is_tilde(event.pressed);
+            special_esc(event.pressed);
             break;
 
         case CTRL_A:
