@@ -45,20 +45,6 @@ bool guied() {
     return ((get_mods() & (1 << 3)) != 0) || ((get_mods() & (1 << 7)) != 0);
 }
 
-void shift_esc_is_tilde(bool pressed) {
-    if (pressed) {
-        if ( shifted() ) {
-            add_key(KC_GRV);
-            send_keyboard_report();
-        } else {
-            add_key(KC_ESC);
-            send_keyboard_report();
-        }
-    } else {
-        clear_keyboard_but_mods();
-    }
-}
-
 void ctrl_h_is_backspace(bool pressed) {
     uint8_t mods = get_mods();
     if (pressed) {
@@ -102,6 +88,20 @@ void tmux(bool pressed) {
         send_keyboard_report();
         clear_keyboard();
         send_keyboard_report();
+    }
+}
+
+void special_esc(bool pressed) {
+    if (pressed) {
+        if ( shifted() || guied() ) {
+            add_key(KC_GRV);
+            send_keyboard_report();
+        } else {
+            add_key(KC_ESC);
+            send_keyboard_report();
+        }
+    } else {
+        clear_keyboard_but_mods();
     }
 }
 
