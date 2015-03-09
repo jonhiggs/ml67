@@ -150,9 +150,9 @@ void special_backspaces(bool pressed) {
 
 void osx_sleep(bool pressed) {
     if (pressed) {
-        /* CTRL + SHIFT + EJECT will put a Mac to sleep. */
-        add_mods(MOD_BIT(KC_LCTRL));
-        add_mods(MOD_BIT(KC_LSHIFT));
+        /* CMD + ALT + EJECT will put a Mac to sleep. */
+        add_mods(MOD_BIT(KC_LGUI));
+        add_mods(MOD_BIT(KC_LALT));
         send_keyboard_report();
         add_key(KC_EJCT);
         send_keyboard_report();
