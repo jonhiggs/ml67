@@ -87,21 +87,19 @@ void tmux(bool pressed) {
         add_key(KC_COMMA);
         send_keyboard_report();
         clear_keyboard();
-        send_keyboard_report();
     }
 }
 
 void special_esc(bool pressed) {
     if (pressed) {
-        if ( shifted() || guied() ) {
+        if (shifted() || guied())
             debug("\nEsc is a Backtick");
             add_key(KC_GRV);
-            send_keyboard_report();
         } else {
             debug("\nEsc is an Esc");
             add_key(KC_ESC);
-            send_keyboard_report();
         }
+        send_keyboard_report();
     } else {
         clear_keyboard_but_mods();
     }
