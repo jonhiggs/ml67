@@ -23,8 +23,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(   // LAYER 2: Function2
       FN15, F14,  F15,  NO,   NO,   NO,   NO,   MPRV, MPLY, MNXT, MUTE, VOLD, VOLU, NO,   EJCT, \
       TRNS, NO,   NO,   UP,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,         \
-      TRNS, NO,   LEFT, DOWN, RGHT, NO,   NO,   INS,  HOME, PGUP, BSPC, NO,         NO,         \
-      CAPS, NO,   NO,   NO,   NO,   NO,   NO,   DEL,  END,  PGDN, NO,         TRNS, NO,   NO,   \
+      TRNS, NO,   NO,   NO,   FN17, NO,   NO,   INS,  HOME, PGUP, BSPC, NO,         NO,         \
+      CAPS, NO,   NO,   NO,   NO,   FN16, NO,   DEL,  END,  PGDN, NO,         TRNS, NO,   NO,   \
       TRNS, TRNS, TRNS, TRNS,             SPC,              TRNS, TRNS, NO,   NO,   NO,   NO,   \
       TRNS, TRNS                                                                                \
     ),
@@ -38,6 +38,8 @@ enum function_id {
     ESC,
     PROGRAMMING,
     TMUX,
+    OSX_PREV_WORD,
+    OSX_NEXT_WORD,
 };
 
 // Fn action definition
@@ -50,6 +52,8 @@ const uint16_t PROGMEM fn_actions[] = {
     [13] = ACTION_FUNCTION(ESC),              // Special ESC key.
     [14] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
     [15] = ACTION_FUNCTION(PROGRAMMING),      // Program the Teensy.
+    [16] = ACTION_FUNCTION(OSX_PREV_WORD),    // Previous Word in OSX
+    [17] = ACTION_FUNCTION(OSX_NEXT_WORD),    // Next Word in OSX.
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -82,6 +86,14 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
             _delay_ms(1000);
             bootloader_jump(); // not return
             debug("not supported.\n");
+            break;
+
+        case OSX_PREV_WORD:
+            osx_prev_word(event.pressed);
+            break;
+
+        case OSX_NEXT_WORD:
+            osx_next_word(event.pressed);
             break;
     }
 }

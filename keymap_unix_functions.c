@@ -144,3 +144,21 @@ void special_backspaces(bool pressed) {
         clear_keyboard_but_mods();
     }
 }
+
+void osx_next_word(bool pressed) {
+    if (pressed) {
+        add_mods(MOD_BIT(KC_RALT));
+        add_key(KC_RIGHT);
+        send_keyboard_report();
+        clear_keyboard();
+    }
+}
+
+void osx_prev_word(bool pressed) {
+    if (pressed) {
+        add_mods(MOD_BIT(KC_RALT));
+        add_key(KC_LEFT);
+        send_keyboard_report();
+        clear_keyboard();
+    }
+}
