@@ -63,24 +63,6 @@ void ctrl_h_is_backspace(bool pressed) {
     }
 }
 
-void ctrl_a_is_home(bool pressed) {
-    uint8_t mods = get_mods();
-    if (pressed) {
-        if ( controlled() ) {
-            del_mods(MOD_BIT(KC_LCTRL));
-            clear_mods();
-            add_key(KC_HOME);
-            send_keyboard_report();
-            add_mods(mods);
-        } else {
-            add_key(KC_A);
-            send_keyboard_report();
-        }
-    } else {
-        clear_keyboard_but_mods();
-    }
-}
-
 void tmux(bool pressed) {
     if (pressed) {
         add_mods(MOD_BIT(KC_LALT));

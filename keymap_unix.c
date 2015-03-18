@@ -33,7 +33,6 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // id for user defined functions
 enum function_id {
     BACKSPACE,
-    CTRL_A,
     CTRL_H,
     ESC,
     PROGRAMMING,
@@ -48,7 +47,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [2] = ACTION_LAYER_MOMENTARY(2),          // FN2 switch to layer 2
     [10] = ACTION_FUNCTION(BACKSPACE),        // Alt-Backspace deletes a word.
     [11] = ACTION_FUNCTION(CTRL_H),           // Ctrl-H sends backspace.
-    [12] = ACTION_FUNCTION(CTRL_A),           // Ctrl-A sends home.
     [13] = ACTION_FUNCTION(ESC),              // Special ESC key.
     [14] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
     [15] = ACTION_FUNCTION(PROGRAMMING),      // Program the Teensy.
@@ -66,10 +64,6 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
         case ESC:
             special_esc(event.pressed);
-            break;
-
-        case CTRL_A:
-            ctrl_a_is_home(event.pressed);
             break;
 
         case TMUX:
