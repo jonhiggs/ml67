@@ -111,9 +111,7 @@ void special_backspaces(bool pressed) {
             /* forward delete word. */
             /* ESC, D */
             clear_mods();
-            add_mods(MOD_BIT(KC_LALT));
             add_key(KC_ESC);
-            send_keyboard_report();
             add_key(KC_D);
             send_keyboard_report();
             add_mods(mods);
