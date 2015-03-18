@@ -112,6 +112,7 @@ void special_backspaces(bool pressed) {
             /* ESC, D */
             clear_mods();
             add_key(KC_ESC);
+            send_keyboard_report();
             add_key(KC_D);
             send_keyboard_report();
             add_mods(mods);
