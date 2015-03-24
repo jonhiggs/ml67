@@ -19,3 +19,5 @@ I've also added a `tmux` prefix key (in which to use you need to configure the t
 `Shift-Esc` now sends a `~` too. No point in moving `~` all the way across the keyboard when you don't have to.
 
 There is a layer which can be turned on which emulates emacs and it's shortcuts from within OSX. This won't work for any other OS other than OSX but I will probably write more OS compatibility in the future. Probably for Android first, then, maybe Linux.
+
+The Capslock LED now also acts as an indicator for the Emacs layer.
