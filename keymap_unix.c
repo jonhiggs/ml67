@@ -56,10 +56,10 @@ enum function_id {
 
 // Fn action definition
 const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_TOGGLE(1),         // FN1 switch to OSX layer
+    [1] = ACTION_LAYER_TOGGLE(1),             // FN1 switch to Emacs layer
     [2] = ACTION_LAYER_MOMENTARY(2),          // FN2 switch to layer 2
     [3] = ACTION_LAYER_MOMENTARY(3),          // FN3 switch to layer 3
-    [4] = ACTION_LAYER_MOMENTARY(1),          // FN1 foot switch
+    [4] = ACTION_LAYER_MOMENTARY(1),          // FN1 footswitch to Emacs layer
     [13] = ACTION_FUNCTION(ESC),              // Special ESC key.
     [14] = ACTION_FUNCTION(TMUX),             // tmux bind prefix
     [15] = ACTION_FUNCTION(PROGRAMMING),      // Program the Teensy.
