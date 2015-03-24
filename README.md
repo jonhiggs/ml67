@@ -56,3 +56,4 @@ Good luck in your own ML67 build.
 5. [LEDs](./doc/05-leds.md)
 6. [USB Connector](./doc/06-usb_connector.md)
 7. [Programming Button](./doc/07-programming_button.md)
+8. [Keymaps](./doc/08-keymaps.md)

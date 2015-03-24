@@ -19,21 +19,33 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "stdint.h"
 
 #include "led.h"
+#include "debug.h"
+
+void led_layer_set(uint32_t state) {
+    DDRD |= (1<<5);
+    dprint("Set LEDs for layer change\n");
+
+    /* Led for Layer 1 */
+    if ((1<<1 & state) != 0) {
+        dprint("Layer 1: on\n");
+        PORTD |= (1<<5);
+    } else {
+        dprint("Layer 1: off\n");
+        PORTD &= ~(1<<5);
+    }
+}
+
 
 /* LED pin configuration
  * Caps Lock: Low PD5
  */
-void led_set(uint8_t usb_led)
-{
+void led_set(uint8_t usb_led) {
     // Set as output.
     DDRD |= (1<<5);
 
-    if (usb_led & (1<<USB_LED_CAPS_LOCK))
-    {
+    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
         PORTD |= (1<<5);
-    }
-    else
-    {
+    } else {
         PORTD &= ~(1<<5);
     }
 }

@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "action_util.h"
 #include "debug.h"
+#include "osx_shortcuts.c"
 
  /*
  *   bit 0      ||||+- Left_Control
@@ -45,24 +46,6 @@ bool guied() {
     return ((get_mods() & (1 << 3)) != 0) || ((get_mods() & (1 << 7)) != 0);
 }
 
-void ctrl_h_is_backspace(bool pressed) {
-    uint8_t mods = get_mods();
-    if (pressed) {
-        // press the keys
-        if ( controlled() ) {
-            clear_mods();
-            add_key(KC_BSPC);
-            send_keyboard_report();
-            add_mods(mods);
-        } else {
-            add_key(KC_H);
-            send_keyboard_report();
-        }
-    } else {
-        clear_keyboard_but_mods();
-    }
-}
-
 void tmux(bool pressed) {
     if (pressed) {
         add_mods(MOD_BIT(KC_LALT));
@@ -85,62 +68,123 @@ void special_esc(bool pressed) {
     }
 }
 
-void special_backspaces(bool pressed) {
-    uint8_t mods = get_mods();
-
+void action_b(bool pressed) {
     if (pressed) {
-        if ( shifted() && alted() ) {
-            /* forward delete word. */
-            /* ESC, D */
-            clear_mods();
-            add_key(KC_ESC);
-            send_keyboard_report();
-            add_key(KC_D);
-            send_keyboard_report();
-            add_mods(mods);
-        } else if ( alted() ) {
-            /* backwards delete word. */
-            /* ESC, BSPC */
-            del_mods(MOD_BIT(KC_LALT));
-            add_key(KC_ESC);
-            send_keyboard_report();
-            del_key(KC_ESC);
-            send_keyboard_report();
-            add_key(KC_BSPC);
-            send_keyboard_report();
-            add_mods(mods);
-        } else if ( controlled() ) {
-            /* forward delete. */
-            /* DELETE */
-            clear_mods();
-            add_key(KC_DELETE);
-            send_keyboard_report();
-            add_mods(mods);
+        if ( alted() ) {
+            osx_back_word();
         } else {
-            /* backwards delete */
-            /* BSPC */
-            add_key(KC_BSPC);
-            send_keyboard_report();
+            add_key(KC_B);
         }
+        send_keyboard_report();
     } else {
         clear_keyboard_but_mods();
     }
 }
 
-void osx_next_word(bool pressed) {
+void action_f(bool pressed) {
     if (pressed) {
-        add_mods(MOD_BIT(KC_RALT));
-        add_key(KC_RIGHT);
+        if ( alted() ) {
+            osx_forward_word();
+        } else {
+            add_key(KC_F);
+        }
         send_keyboard_report();
-        clear_keyboard();
+
+    } else {
+        clear_keyboard_but_mods();
     }
 }
 
-void osx_prev_word(bool pressed) {
+void action_d(bool pressed) {
+    uint8_t mods = get_mods();
+
     if (pressed) {
-        add_mods(MOD_BIT(KC_RALT));
-        add_key(KC_LEFT);
+        if ( controlled() ) {
+            osx_forward_delete_letter();
+        } else if ( alted() ) {
+            osx_forward_delete_word();
+        } else {
+            add_key(KC_D);
+        }
         send_keyboard_report();
-        clear_keyboard();
+    } else {
+        clear_keyboard_but_mods();
+    }
+}
+
+void action_u(bool pressed) {
+    uint8_t mods = get_mods();
+    if (pressed) {
+        if ( controlled() ) {
+            osx_delete_start_of_line();
+        } else {
+            add_key(KC_U);
+        }
+        send_keyboard_report();
+    } else {
+        clear_keyboard_but_mods();
+    }
+}
+
+void action_w(bool pressed) {
+    uint8_t mods = get_mods();
+    /* backwards delete a word */
+    if (pressed) {
+        if ( controlled() ) {
+            osx_delete_word();
+        } else {
+            add_key(KC_W);
+        }
+        send_keyboard_report();
+    } else {
+        clear_keyboard_but_mods();
+    }
+}
+
+void action_k(bool pressed) {
+    uint8_t mods = get_mods();
+    /* backwards delete a word */
+    if (pressed) {
+        if ( controlled() ) {
+            osx_forward_delete_end_of_line();
+        } else {
+            add_key(KC_K);
+        }
+        send_keyboard_report();
+    } else {
+        clear_keyboard_but_mods();
+    }
+}
+
+void action_y(bool pressed) {
+    uint8_t mods = get_mods();
+    /* backwards delete a word */
+    if (pressed) {
+        if ( controlled() ) {
+            osx_paste();
+        } else {
+            add_key(KC_Y);
+        }
+        send_keyboard_report();
+    } else {
+        clear_keyboard_but_mods();
+    }
+}
+
+void action_h(bool pressed) {
+    uint8_t mods = get_mods();
+    /* backwards delete a letter */
+    if (pressed) {
+        if ( controlled() ) {
+            clear_mods();
+            add_key(KC_BSPC);
+            send_keyboard_report();
+            add_mods(mods);
+        } else {
+            add_key(KC_H);
+        }
+        send_keyboard_report();
+    } else {
+        clear_keyboard_but_mods();
     }
 }

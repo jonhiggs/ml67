@@ -55,10 +55,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *  These options are also useful to firmware size reduction.
  */
 
-/* disable debug print */
+/* debugging */
 //#define NO_DEBUG
-
-/* disable print */
+//#define DEBUG_ACTION
 //#define NO_PRINT
 
 /* disable action features */
@@ -68,7 +67,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
-#define TAPPING_TERM    100
+#define TAPPING_TERM    150
 #define TAPPING_TOGGLE  2
 
 #endif
