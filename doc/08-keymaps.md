@@ -20,4 +20,4 @@ I've also added a `tmux` prefix key (in which to use you need to configure the t
 
 There is a layer which can be turned on which emulates emacs and it's shortcuts from within OSX. This won't work for any other OS other than OSX but I will probably write more OS compatibility in the future. Probably for Android first, then, maybe Linux.
 
-The Capslock LED now also acts as an indicator for the Emacs layer.
+The Capslock LED now also acts as an indicator for the Emacs layer. NB: this depends on a [pull request](https://github.com/tmk/tmk_keyboard/pull/198) that I've requested to be merged but as of 25/04/2015 hasn't been just yet. For the meantime, you could use my [fork](https://github.com/jonhiggs/tmk_keyboard/tree/layer_led).
