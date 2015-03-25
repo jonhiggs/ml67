@@ -6,4 +6,4 @@ I was going to make the programming button in hardware but it turns out that was
 - [Idea came from here](https://github.com/tmk/tmk_keyboard/issues/187)
 
 
-**[Next](./07-keymaps.md)**
+**[Next](./08-keymaps.md)**
