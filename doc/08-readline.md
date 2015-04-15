@@ -1,4 +1,4 @@
-# Readline/Emacs Layer
+# Readline Layer
 
 This has taken more inspiration from Readline but for things that are not covered, I reached for the default Emacs shortcuts.
 
