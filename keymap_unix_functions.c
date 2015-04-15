@@ -100,7 +100,7 @@ void action_d(bool pressed) {
 
     if (pressed) {
         if ( controlled() ) {
-            osx_forward_delete_char();
+            osx_delete_char();
         } else if ( alted() ) {
             osx_kill_word();
         } else {
