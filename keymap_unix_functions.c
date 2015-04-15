@@ -110,6 +110,7 @@ void action_d(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
 
 void action_u(bool pressed) {
@@ -124,6 +125,7 @@ void action_u(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
 
 void action_w(bool pressed) {
@@ -139,6 +141,7 @@ void action_w(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
 
 void action_k(bool pressed) {
@@ -154,6 +157,7 @@ void action_k(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
 
 void action_y(bool pressed) {
@@ -169,6 +173,7 @@ void action_y(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
 
 void action_h(bool pressed) {
@@ -187,4 +192,5 @@ void action_h(bool pressed) {
     } else {
         clear_keyboard_but_mods();
     }
+    add_mods(mods);
 }
