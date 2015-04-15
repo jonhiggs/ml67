@@ -128,6 +128,20 @@ void osx_kill_line() {
     add_mods(mods);
 }
 
+void osx_backward_kill_line() {
+    /* cmd-shift-left, cmd-x */
+    uint8_t mods = get_mods();
+    clear_mods();
+    add_mods(MOD_BIT(KC_LSHIFT));
+    add_mods(MOD_BIT(KC_LGUI));
+    add_key(KC_LEFT);
+    send_keyboard_report();
+    clear_mods();
+    osx_cut();
+    send_keyboard_report();
+    add_mods(mods);
+}
+
 void osx_kill_region() {
     /* cmd-shift-left, cmd-x */
     uint8_t mods = get_mods();
