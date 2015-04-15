@@ -110,7 +110,7 @@ void osx_unix_word_rubout() {
      * hyphens the same as a space. I cannot work out how to make OSX do that
      * so I'm just substituting in backward_kill_word.
      */
-    osx_backward_kill_word()
+    osx_backward_kill_word();
 }
 
 
