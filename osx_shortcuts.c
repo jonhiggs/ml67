@@ -156,17 +156,17 @@ void osx_delete_start_of_line() {
     add_mods(mods);
 }
  
-void osx_upcase-word() {
+void osx_upcase_word() {
     /* shift-option-left shift-option-command-u, option-right */
     osx_select_word();
 }
 
-void osx_downcase-word() {
+void osx_downcase_word() {
     /* shift-option-left option-command-u, option-right */
     osx_select_word();
 }
 
-void osx_capitalize-word() {
+void osx_capitalize_word() {
     /* shift-option-left option-command-u, option-right */
     osx_select_word();
 }
