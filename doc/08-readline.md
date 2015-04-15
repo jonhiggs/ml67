@@ -1,8 +1,7 @@
 # Readline Layer
 
 This has taken more inspiration from Readline but for things that are not covered, I reached for the default Emacs shortcuts.
-
-There is a readline mode. Documented here are the supported shortcuts from the [readline man pages](http://www.delorie.com/gnu/docs/readline/rlman_13.html).
+Full Readline shortcut documentation can be found in the [readline man pages](http://www.delorie.com/gnu/docs/readline/rlman_13.html).
 
 
 | Name                | Binding | Description                                                                                       | Supported |
@@ -25,23 +24,23 @@ There is a readline mode. Documented here are the supported shortcuts from the [
 | upcase-word         | M-u     | Uppercase the current or following word.                                                          | ²         |
 | downcase-word       | M-l     | Lowercase the current or following word.                                                          | ³         |
 | capitalize-word     | M-c     | Capitalize the current or following word.                                                         | ⁴         |
-| overwrite-mode      |         | Toggle overwrite mode.                                                                            |           |
+| overwrite-mode      |         | Toggle overwrite mode.                                                                            | ☐         |
 | kill-line           | C-k     | Kill the text from point to the end of the line.                                                  | •         |
-| backward-kill-line  | C-x Rubout | Kill backward to the beginning of the line.                                                    | •         |
+| backward-kill-line  | C-x Rubout | Kill backward to the beginning of the line.                                                    |           |
 | unix-line-discard   | C-u     | Kill backward from the cursor to the beginning of the current line.                               | •         |
 | kill-whole-line     |         |  Kill all characters on the current line, no matter where point is. By default, this is unbound.  |           |
 
 | kill-word           | M-d     | Kill from point to the end of the current word.                                                   | •         |
 | backward-kill-word  | M-DEL   | Kill the word behind point. Hyphens are equivalent to a space.                                    | •         |
 | unix-word-rubout    | C-w     | Kill the word behind point.                                                                       | ¹         |
-| delete-horizontal-space |     | Delete all spaces and tabs around point.                                                          |           |
+| delete-horizontal-space |     | Delete all spaces and tabs around point.                                                          | ☐         |
 | kill-region         |         | Kill the text in the current region. By default, this command is unbound.                         |           |
 | copy-region-as-kill |         | Copy the text in the region to the kill buffer, so it can be yanked right away.                   |           |
 | copy-backward-word  |         | Copy the word before point to the kill buffer. The word boundaries are the same as backward-word. |           |
 | copy-forward-word   |         | Copy the word following point to the kill buffer. The word boundaries are the same as forward-word.|          |
 
 | yank                | C-y     | Yank the top of the kill ring into the buffer at point.                                           | •         |
-| yank-pop            | M-y     | Rotate the kill-ring, and yank the new top. You can only do this if the prior command is yank or yank-pop.                  | |
+| yank-pop            | M-y     | Rotate the kill-ring, and yank the new top. You can only do this if the prior command is yank or yank-pop. | ☐ |
 
 • Supported by ML67  
 ◆ Supported by OSX  
