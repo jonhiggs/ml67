@@ -13,7 +13,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       FN14, FN1,  FN2,  LGUI,             SPC,              RALT, FN3,  NO,   LEFT, DOWN, RGHT,\
       FN4,  FN4                                                                                \
     ),
-    KEYMAP(   // LAYER 1: OSX EMACS
+    KEYMAP(   // LAYER 1: OSX READLINE
       TRNS, 1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    TRNS, TRNS, TRNS, TRNS,\
       TRNS, Q,    FN25, E,    R,    T,    FN26, FN24, I,    O,    P,    TRNS, TRNS, TRNS,      \
       TRNS, A,    S,    FN23, FN21, G,    FN19, J,    FN27, L,    TRNS, TRNS,       TRNS,      \
@@ -72,7 +72,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [26] = ACTION_FUNCTION(ACTION_KEY_Y),     // Y Key on OSX.
     [27] = ACTION_FUNCTION(ACTION_KEY_K),     // K Key on OSX.
 };
-
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
     keyevent_t event = record->event;
