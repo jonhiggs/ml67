@@ -71,7 +71,7 @@ void special_esc(bool pressed) {
 void action_b(bool pressed) {
     if (pressed) {
         if ( alted() ) {
-            osx_back_word();
+            osx_backward_word();
         } else {
             add_key(KC_B);
         }
@@ -100,9 +100,9 @@ void action_d(bool pressed) {
 
     if (pressed) {
         if ( controlled() ) {
-            osx_forward_delete_letter();
+            osx_forward_delete_char();
         } else if ( alted() ) {
-            osx_forward_delete_word();
+            osx_kill_word();
         } else {
             add_key(KC_D);
         }
@@ -131,7 +131,7 @@ void action_w(bool pressed) {
     /* backwards delete a word */
     if (pressed) {
         if ( controlled() ) {
-            osx_delete_word();
+            osx_kill_region();
         } else {
             add_key(KC_W);
         }
@@ -146,7 +146,7 @@ void action_k(bool pressed) {
     /* backwards delete a word */
     if (pressed) {
         if ( controlled() ) {
-            osx_forward_delete_end_of_line();
+            osx_kill_line();
         } else {
             add_key(KC_K);
         }
