@@ -125,9 +125,9 @@ PROGRAM_CMD = $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE
 VPATH += $(TARGET_DIR)
 VPATH += $(TOP_DIR)
 
-include $(TOP_DIR)/protocol/lufa.mk
-include $(TOP_DIR)/common.mk
-include $(TOP_DIR)/rules.mk
+include $(TMK_DIR)/protocol/lufa.mk
+include $(TMK_DIR)/common.mk
+include $(TMK_DIR)/rules.mk
 
 plain: OPT_DEFS += -DKEYMAP_PLAIN
 plain: all
