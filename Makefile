@@ -45,15 +45,14 @@ export PATH := ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin:$(PATH)
 # Target file name (without extension).
 KEYMAP = unix
 TARGET = ml67_${KEYMAP}
+TMK_DIR = ../../tmk_core
 
 # Directory common source files exist
 TOP_DIR = ../..
-LUFA_PATH = protocol/lufa/LUFA-git
+#LUFA_PATH = protocol/lufa/LUFA-git
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
-
-TMK_DIR = ../../tmk_core
 
 # project specific files
 SRC = keymap_$(KEYMAP).c \
@@ -123,7 +122,7 @@ PROGRAM_CMD = $(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH) $(AVRDUDE_WRITE
 
 # Search Path
 VPATH += $(TARGET_DIR)
-VPATH += $(TOP_DIR)
+VPATH += $(TMK_DIR)
 
 include $(TMK_DIR)/protocol/lufa.mk
 include $(TMK_DIR)/common.mk
@@ -151,3 +150,4 @@ git_tests:
 	git branch -D tests
 	git branch tests
 	git checkout tests
+
