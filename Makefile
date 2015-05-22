@@ -53,6 +53,8 @@ LUFA_PATH = protocol/lufa/LUFA-git
 # Directory keyboard dependent files exist
 TARGET_DIR = .
 
+TMK_DIR = ../../tmk_core
+
 # project specific files
 SRC = keymap_$(KEYMAP).c \
       keymap_common.c \
