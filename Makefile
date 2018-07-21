@@ -43,9 +43,11 @@ ARDUINO_PATH = /Applications/Arduino.app
 export PATH := ${ARDUINO_PATH}/Contents/Java/hardware/tools/avr/bin:$(PATH)
 
 # Target file name (without extension).
-KEYMAP = unix
+KEYMAP ?= unix
 TARGET = ml67_${KEYMAP}
-TMK_DIR = ../../tmk_core
+
+# tested on tmk_core dc0e46eaa4367d4e218f8816e3c117895820f07c
+TMK_DIR = ../tmk_core
 
 # Directory common source files exist
 TOP_DIR = ../..
