@@ -179,25 +179,25 @@ static matrix_row_t read_cols(void)
 /* IMPORTANT: TMK rows are Filco columns due to the direction of the diodes in
  * the circuit board.
 
-  | Filco  | Teensy |
-  |--------|--------|
-  | C1/C12 | B0     |
-  | C2/C14 | B1     |
-  | C3/C0  | B2     |
-  | C4     | B3     |
-  | C5     | E6     |
-  | C6     | B7     |
-  | C7/C13 | D0     |
-  | C8     | D1     |
-  | C9     | D2     |
-  | C10    | D3     |
-  | C11    | C6     |
-  | C15    | C7     |
+Row| Filco  | Teensy |
+---|--------|--------|
+0  | C1/C12 | B0     |
+1  | C2/C14 | B1     |
+2  | C3/C0  | B2     |
+3  | C4     | B3     |
+4  | C5     | B7     |
+5  | C6     | D0     |
+6  | C7/C13 | D1     |
+7  | C8     | D2     |
+8  | C9     | D3     |
+9  | C10    | C6     |
+10 | C11    | C7     |
+11 | C15    | D5     |
 
-  | FOOT  | TEENSY |
-  |-------|--------|
-  | C16   | D6     |
-  | C17   | D7     |
+   | FOOT  | TEENSY |
+   |-------|--------|
+   | C16   | E6     |
+   | C17   | F5     |
 */
 
 static void unselect_rows(void)
@@ -206,8 +206,8 @@ static void unselect_rows(void)
     PORTB &= ~0b10001111;
     DDRE  &= ~0b01000000;
     PORTE &= ~0b01000000;
-    DDRD  &= ~0b11001111;
-    PORTD &= ~0b11001111;
+    DDRD  &= ~0b00101111;
+    PORTD &= ~0b00101111;
     DDRC  &= ~0b11000000;
     PORTC &= ~0b11000000;
 }
@@ -232,44 +232,40 @@ static void select_row(uint8_t row)
             PORTB &= ~(1<<3);
             break;
         case 4:
-            DDRE  |= (1<<6);
-            PORTE &= ~(1<<6);
-            break;
-        case 5:
             DDRB  |= (1<<7);
             PORTB &= ~(1<<7);
             break;
-        case 6:
+        case 5:
             DDRD  |= (1<<0);
             PORTD &= ~(1<<0);
             break;
-        case 7:
+        case 6:
             DDRD  |= (1<<1);
             PORTD &= ~(1<<1);
             break;
-        case 8:
+        case 7:
             DDRD  |= (1<<2);
             PORTD &= ~(1<<2);
             break;
-        case 9:
+        case 8:
             DDRD  |= (1<<3);
             PORTD &= ~(1<<3);
             break;
-        case 10:
+        case 9:
             DDRC  |= (1<<6);
             PORTC &= ~(1<<6);
             break;
-        case 11:
+        case 10:
             DDRC  |= (1<<7);
             PORTC &= ~(1<<7);
             break;
-        case 12:
-            DDRD  |= (1<<6);
-            PORTD &= ~(1<<6);
+        case 11:
+            DDRD  |= (1<<5);
+            PORTD &= ~(1<<5);
             break;
-        case 13:
-            DDRD  |= (1<<7);
-            PORTD &= ~(1<<7);
+        case 12:
+            DDRE  |= (1<<6);
+            PORTE &= ~(1<<6);
             break;
     }
 }
